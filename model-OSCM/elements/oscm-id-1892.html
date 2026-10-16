@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Publish Production Plan</title>
+
+	<!-- JQUERY -->
+	<script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.4.1.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+	<!-- MARKDOWN -->
+	<script type="text/javascript" src="../../lib/marked/marked.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Publish Production Plan</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-elementtype-BusinessProcess"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-BusinessProcess" target="hint"></a>
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+                    <!-- Analysis -->
+                    	<li role="presentation"><a href="#analysis" aria-controls="analysis" role="tab" data-toggle="tab" class="i18n-analysis"></a></li>
+
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="markdown-doc"><script type="text/plain">**An approved plan travels to the people who execute it.** The process takes the final Production Plan after approval and turns it into a controlled release. It extracts only the sections each recipient needs: the full plan for execution leads, and schedule lines for work centers. Confidentiality rules from the Publication Directive redact cross-functional details where required. Every recipient gets access to the correct version, and no execution starts from an outdated copy.
+
+**The process depends on a clean handoff from planning.** It cannot distribute a plan that lacks approval status or has been superseded. The Publication Directive supplies the distribution list, release timing, and confidentiality rules. If a recipient cannot be reached, the process queues a Publication Failure Notice and retries once before escalating, so the gap is visible rather than silent.
+
+**Publication Receipt confirms access.** Each recipient receives a receipt with a timestamp and version identifier, confirming they have the correct plan. That receipt is the point at which an approved Production Plan becomes a shared schedule rather than a document waiting in a repository.</script></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>level</td><td class="convertlinks no-margin" style="white-space:pre-wrap">3</td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="analysis">
+						<table class="table table-striped table-hover table-condensed" id="used-in-views">
+							<thead>
+								<tr><th colspan="2" class="i18n-used-in-views" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-viewpoint"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="used-in-views-view-elements_map-[OSCM]">
+																	<td><a href="../views/view-elements_map-[OSCM].html" target="view" title="Elements Map"> Elements Map </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-processes_overview-[OSCM]">
+																	<td><a href="../views/view-processes_overview-[OSCM].html" target="view" title="Processes Overview"> Processes Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-711]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-711].html" target="view" title="Plan Make - Processes"> Plan Make - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1882]">
+																	<td><a href="../views/view-process_context-[oscm-id-1882].html" target="view" title="Calculate Production Plan - Context"> Calculate Production Plan - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1892]">
+																	<td><a href="../views/view-process_context-[oscm-id-1892].html" target="view" title="Publish Production Plan - Context"> Publish Production Plan - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_processes-[oscm-id-grp-plan]">
+																	<td><a href="../views/view-domain_processes-[oscm-id-grp-plan].html" target="view" title="P Plan - Processes"> P Plan - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr>
+							</tbody>
+						</table>
+						<table class="table table-striped table-hover table-condensed" id="model-relations">
+							<thead>
+								<tr><th colspan="4" class="i18n-model-relations" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-type"></th>
+									<th class="i18n-source"></th>
+									<th class="i18n-target"></th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+											<td><a href="../elements/oscm-elem-id-acc-1132.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-1892.html" target="element"> Publish Production Plan</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-production-order.html" target="element"> Production Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-372.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-1892.html" target="element"> Publish Production Plan</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-production-plan.html" target="element"> Production Plan</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-678.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-1892.html" target="element"> Publish Production Plan</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-production-requisition.html" target="element"> Production Requisition</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-448.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-1892.html" target="element"> Publish Production Plan</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-rs11.html" target="element"> Planning Frequency (RS11)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-18922.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-1892.html" target="element"> Publish Production Plan</a></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+										</tr>
+									<tr>
+											<td><a href="../elements/oscm-flow-f143ae4124ab.html" target="element" title="Production Plan">Production Plan</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-1882.html" target="element"> Calculate Production Plan</a></td>
+											<td><a href="../elements/oscm-id-1892.html" target="element"> Publish Production Plan</a></td>
+										</tr>
+							</tbody>
+						</table>
+					</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>S Source</title>
+
+	<!-- JQUERY -->
+	<script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.4.1.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+	<!-- MARKDOWN -->
+	<script type="text/javascript" src="../../lib/marked/marked.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>S Source</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-elementtype-Grouping"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-Grouping" target="hint"></a>
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+                    <!-- Analysis -->
+                    	<li role="presentation"><a href="#analysis" aria-controls="analysis" role="tab" data-toggle="tab" class="i18n-analysis"></a></li>
+
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="markdown-doc"><script type="text/plain">**A demand signal starts the check.** When a demand or replenishment signal arrives, the first job is to see whether an existing Supply Agreement covers it. If one does, the work moves to issuing a Purchase Order or adjusting a schedule. If not, the requirement goes through validation and supplier qualification before anything is committed. This keeps purchasing inside agreed terms for cost, quality, and delivery timing, and it protects supply continuity.
+
+**Three connections keep purchases honest.**
+- Supplier Performance Reports update ratings and trigger Corrective Action Requests.
+- Return Requests are only authorised when they match the original Purchase Order and contract return terms.
+- Supplier Invoices are matched against Purchase Orders and Goods Receipts before payment.
+
+These connections tie every acquisition to evidence and contract, so suppliers stay accountable and returns stay recoverable.
+
+**A Purchase Order fixes the commitment.** When a valid requirement matches an Approved Supplier with an active Supply Agreement, a Purchase Order is issued. It records what will be bought, at what price, and by when. That single record is the point where a need becomes a promise, and suppliers hold the organisation to it.</script></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>level</td><td class="convertlinks no-margin" style="white-space:pre-wrap">1</td></tr><tr><td>bucket</td><td class="convertlinks no-margin" style="white-space:pre-wrap">Operations</td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="analysis">
+						<table class="table table-striped table-hover table-condensed" id="used-in-views">
+							<thead>
+								<tr><th colspan="2" class="i18n-used-in-views" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-viewpoint"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="used-in-views-view-domain_capabilities-[oscm-id-grp-source]">
+																	<td><a href="../views/view-domain_capabilities-[oscm-id-grp-source].html" target="view" title="S Source - Capabilities"> S Source - Capabilities </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_processes-[oscm-id-grp-source]">
+																	<td><a href="../views/view-domain_processes-[oscm-id-grp-source].html" target="view" title="S Source - Processes"> S Source - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-system_overview-[OSCM]">
+																	<td><a href="../views/view-system_overview-[OSCM].html" target="view" title="System Overview"> System Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_processes-[oscm-id-grp-enable]">
+																	<td><a href="../views/view-domain_processes-[oscm-id-grp-enable].html" target="view" title="E Enable - Processes"> E Enable - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2002]">
+																	<td><a href="../views/view-process_context-[oscm-id-2002].html" target="view" title="Tender - Context"> Tender - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-501]">
+																	<td><a href="../views/view-capability_context-[oscm-id-501].html" target="view" title="Sell by Proposal - Context"> Sell by Proposal - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-511]">
+																	<td><a href="../views/view-capability_context-[oscm-id-511].html" target="view" title="Sell Custom Solution - Context"> Sell Custom Solution - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-771]">
+																	<td><a href="../views/view-capability_context-[oscm-id-771].html" target="view" title="Source Returns - Context"> Source Returns - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1992]">
+																	<td><a href="../views/view-process_context-[oscm-id-1992].html" target="view" title="Identify Supply Sources - Context"> Identify Supply Sources - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1972]">
+																	<td><a href="../views/view-process_context-[oscm-id-1972].html" target="view" title="Analyze Supply Market - Context"> Analyze Supply Market - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-511]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-511].html" target="view" title="Sell Custom Solution - Processes"> Sell Custom Solution - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2192]">
+																	<td><a href="../views/view-process_context-[oscm-id-2192].html" target="view" title="Negotiate &amp; Award - Context"> Negotiate &amp; Award - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1962]">
+																	<td><a href="../views/view-process_context-[oscm-id-1962].html" target="view" title="Identify Requirements - Context"> Identify Requirements - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capabilities_overview-[OSCM]">
+																	<td><a href="../views/view-capabilities_overview-[OSCM].html" target="view" title="Capabilities Overview"> Capabilities Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-501]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-501].html" target="view" title="Sell by Proposal - Processes"> Sell by Proposal - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2012]">
+																	<td><a href="../views/view-process_context-[oscm-id-2012].html" target="view" title="Negotiate - Context"> Negotiate - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1982]">
+																	<td><a href="../views/view-process_context-[oscm-id-1982].html" target="view" title="Develop Strategy - Context"> Develop Strategy - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-home-[OSCM]">
+																	<td><a href="../views/view-home-[OSCM].html" target="view" title="Home"> Home </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_capabilities-[oscm-id-grp-enable]">
+																	<td><a href="../views/view-domain_capabilities-[oscm-id-grp-enable].html" target="view" title="E Enable - Capabilities"> E Enable - Capabilities </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-741]">
+																	<td><a href="../views/view-capability_context-[oscm-id-741].html" target="view" title="Source-to-Replenish - Context"> Source-to-Replenish - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-processes_overview-[OSCM]">
+																	<td><a href="../views/view-processes_overview-[OSCM].html" target="view" title="Processes Overview"> Processes Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-761]">
+																	<td><a href="../views/view-capability_context-[oscm-id-761].html" target="view" title="Source-to-Engineering-Order - Context"> Source-to-Engineering-Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2202]">
+																	<td><a href="../views/view-process_context-[oscm-id-2202].html" target="view" title="Create Order - Context"> Create Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-731]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-731].html" target="view" title="Strategic Sourcing - Processes"> Strategic Sourcing - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-731]">
+																	<td><a href="../views/view-capability_context-[oscm-id-731].html" target="view" title="Strategic Sourcing - Context"> Strategic Sourcing - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2022]">
+																	<td><a href="../views/view-process_context-[oscm-id-2022].html" target="view" title="Award Contract - Context"> Award Contract - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2172]">
+																	<td><a href="../views/view-process_context-[oscm-id-2172].html" target="view" title="Approve Payment - Context"> Approve Payment - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-751]">
+																	<td><a href="../views/view-capability_context-[oscm-id-751].html" target="view" title="Source-to-Order - Context"> Source-to-Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-elements_map-[OSCM]">
+																	<td><a href="../views/view-elements_map-[OSCM].html" target="view" title="Elements Map"> Elements Map </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr>
+							</tbody>
+						</table>
+						<table class="table table-striped table-hover table-condensed" id="model-relations">
+							<thead>
+								<tr><th colspan="4" class="i18n-model-relations" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-type"></th>
+									<th class="i18n-source"></th>
+									<th class="i18n-target"></th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+											<td><a href="../elements/oscm-elem-id-acc-177.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-product-delivery.html" target="element"> Product Delivery</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-221.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-execution-data.html" target="element"> Execution Data</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-385.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-material.html" target="element"> Material</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-449.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-purchase-order.html" target="element"> Purchase Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-543.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-sales-plan.html" target="element"> Sales Plan</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-557.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-sourcing-plan.html" target="element"> Sourcing Plan</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-633.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-merchandise.html" target="element"> Merchandise</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-925.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-service-delivery.html" target="element"> Service Delivery</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-comp-source-1.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-CompositionRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-id-731.html" target="element"> Strategic Sourcing</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-comp-source-2.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-CompositionRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-id-741.html" target="element"> Source-to-Replenish</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-comp-source-3.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-CompositionRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-id-751.html" target="element"> Source-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-comp-source-4.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-CompositionRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-id-761.html" target="element"> Source-to-Engineering-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-comp-source-5.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-CompositionRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-id-771.html" target="element"> Source Returns</a></td>
+										</tr><tr>
+											<td><a href="../elements/id-aa1db4c6-90c8-488c-9f28-0f9d4da91696.html" target="element" title="Supply Agreement">Supply Agreement</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-id-grp-enable.html" target="element"> E Enable</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-10.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae1.html" target="element"> Cash Conversion Cycle (AE1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-108.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-co1.html" target="element"> Supply Chain Costs (CO1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-196.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-co12.html" target="element"> Distribution Costs (CO12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-270.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp1.html" target="element"> Perfect Order Ratio (DP1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-415.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-rs1.html" target="element"> Order Cycle Time (RS1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-590.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-sd1.html" target="element"> Environmental Sustainability Ratio (SD1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-serv-70.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-ServingRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-elem-id-vs-s2p.html" target="element"> Source-to-Pay</a></td>
+										</tr><tr>
+											<td><a href="../elements/trig-dom-s-source--e-enable.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-TriggeringRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+											<td><a href="../elements/oscm-id-grp-enable.html" target="element"> E Enable</a></td>
+										</tr>
+									<tr>
+											<td><a href="../elements/id-c17a8d12-6dca-4f2b-87d5-2e77c210f7b2.html" target="element" title="Approval Decision">Approval Decision</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-enable.html" target="element"> E Enable</a></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+										</tr><tr>
+											<td><a href="../elements/trig-dom-e-enable--s-source.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-TriggeringRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-enable.html" target="element"> E Enable</a></td>
+											<td><a href="../elements/oscm-id-grp-source.html" target="element"> S Source</a></td>
+										</tr>
+							</tbody>
+						</table>
+					</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

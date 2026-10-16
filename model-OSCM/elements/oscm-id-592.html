@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Refine & Negotiate</title>
+
+	<!-- JQUERY -->
+	<script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.4.1.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+	<!-- MARKDOWN -->
+	<script type="text/javascript" src="../../lib/marked/marked.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Refine &amp; Negotiate</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-elementtype-BusinessProcess"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-BusinessProcess" target="hint"></a>
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+                    <!-- Analysis -->
+                    	<li role="presentation"><a href="#analysis" aria-controls="analysis" role="tab" data-toggle="tab" class="i18n-analysis"></a></li>
+
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="markdown-doc"><script type="text/plain">**A counterproposal arrives.** The organisation compares the counterparty's requested changes against the submitted Contract Proposal and assesses the commercial, legal, and risk impact of each difference. The work is iterative: each difference is discussed, marked agreed, or a fallback position is explored. This reconciliation protects the organisation from accepting a term it cannot live with.
+
+**Every difference is recorded.** The process maintains a **Negotiation Record** that logs each difference, its assessment, and its final disposition. A difference declared unresolvable triggers a Disagreement Record and halts the proposal rather than forcing an unacceptable term.
+
+**Agreement yields a revised version.** When all differences are agreed, the process issues a Revised Proposal that incorporates every agreed change and increments the version number. The Negotiation Record then holds a complete history of the exchange, from first counterproposal to final agreement.</script></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>level</td><td class="convertlinks no-margin" style="white-space:pre-wrap">3</td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="analysis">
+						<table class="table table-striped table-hover table-condensed" id="used-in-views">
+							<thead>
+								<tr><th colspan="2" class="i18n-used-in-views" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-viewpoint"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="used-in-views-view-domain_processes-[oscm-id-grp-enable]">
+																	<td><a href="../views/view-domain_processes-[oscm-id-grp-enable].html" target="view" title="E Enable - Processes"> E Enable - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-572]">
+																	<td><a href="../views/view-process_context-[oscm-id-572].html" target="view" title="Obtain Approvals - Context"> Obtain Approvals - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-processes_overview-[OSCM]">
+																	<td><a href="../views/view-processes_overview-[OSCM].html" target="view" title="Processes Overview"> Processes Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-elements_map-[OSCM]">
+																	<td><a href="../views/view-elements_map-[OSCM].html" target="view" title="Elements Map"> Elements Map </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-552]">
+																	<td><a href="../views/view-process_context-[oscm-id-552].html" target="view" title="Initiate Proposal - Context"> Initiate Proposal - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-592]">
+																	<td><a href="../views/view-process_context-[oscm-id-592].html" target="view" title="Refine &amp; Negotiate - Context"> Refine &amp; Negotiate - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-582]">
+																	<td><a href="../views/view-process_context-[oscm-id-582].html" target="view" title="Submit Proposal - Context"> Submit Proposal - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-541]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-541].html" target="view" title="Contract by Proposal - Processes"> Contract by Proposal - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr>
+							</tbody>
+						</table>
+						<table class="table table-striped table-hover table-condensed" id="model-relations">
+							<thead>
+								<tr><th colspan="4" class="i18n-model-relations" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-type"></th>
+									<th class="i18n-source"></th>
+									<th class="i18n-target"></th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+											<td><a href="../elements/oscm-flow-dcb52bbaf876.html" target="element" title="Revised Proposal">Revised Proposal</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-592.html" target="element"> Refine &amp; Negotiate</a></td>
+											<td><a href="../elements/oscm-id-572.html" target="element"> Obtain Approvals</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-5922.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-592.html" target="element"> Refine &amp; Negotiate</a></td>
+											<td><a href="../elements/oscm-id-541.html" target="element"> Contract by Proposal</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-serv-91.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-ServingRelationship" /></td>
+											<td><a href="../elements/oscm-id-592.html" target="element"> Refine &amp; Negotiate</a></td>
+											<td><a href="../elements/oscm-elem-id-vs-i2o.html" target="element"> Inquiry-to-Order</a></td>
+										</tr>
+									<tr>
+											<td><a href="../elements/oscm-flow-3b008bdd4efd.html" target="element" title="Contract Proposal">Contract Proposal</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-552.html" target="element"> Initiate Proposal</a></td>
+											<td><a href="../elements/oscm-id-592.html" target="element"> Refine &amp; Negotiate</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-flow-6443fdb9dd2b.html" target="element" title="Proposal Submission Record">Proposal Submission Record</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-582.html" target="element"> Submit Proposal</a></td>
+											<td><a href="../elements/oscm-id-592.html" target="element"> Refine &amp; Negotiate</a></td>
+										</tr>
+							</tbody>
+						</table>
+					</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

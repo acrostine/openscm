@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Model query</title>
+<style>
+  /* The page owns its own scrolling: it is loaded inside an iframe that the
+     publisher renders with scrolling="no", so relying on the frame's scrollbar
+     loses content. min-height:0 is what lets the flex child actually shrink. */
+  html,body{height:100%;margin:0}
+  body{display:flex;flex-direction:column;overflow:hidden;
+       font:13px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+       color:#24292f;background:#fff}
+  header{flex:0 0 auto;padding:10px 12px;border-bottom:1px solid #e3e3e0;background:#fafaf8}
+  main{flex:1 1 auto;overflow:auto;min-height:0;padding:12px}
+  textarea{width:100%;box-sizing:border-box;font:12px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;
+           padding:8px;border:1px solid #d8d6cd;border-radius:6px;resize:vertical;min-height:70px}
+  button{font:inherit;padding:6px 12px;border:1px solid #d8d6cd;background:#fff;border-radius:6px;cursor:pointer}
+  button:hover:not(:disabled){border-color:#639922}
+  button:disabled{opacity:.5;cursor:default}
+  .row{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
+  .muted{color:#6a6a6a;font-size:12px}
+  table{border-collapse:collapse;width:100%;font-size:12px}
+  th,td{border:1px solid #e3e3e0;padding:4px 7px;text-align:left;vertical-align:top;
+        max-width:480px;overflow:hidden;text-overflow:ellipsis;white-space:pre-wrap}
+  th{background:#f4f4f1;position:sticky;top:0}
+  tbody tr:nth-child(even){background:#fbfbf9}
+  .err{color:#a11;white-space:pre-wrap;font:12px/1.5 ui-monospace,Consolas,monospace}
+  .chip{display:inline-block;padding:2px 7px;border:1px solid #e3e3e0;border-radius:10px;
+        background:#fff;font-size:11px;cursor:pointer}
+  .chip:hover{border-color:#639922}
+</style>
+</head>
+<body>
+<header>
+  <textarea id="q" spellcheck="false">SELECT Type, COUNT(*) AS n FROM elements GROUP BY Type ORDER BY n DESC;</textarea>
+  <div class="row">
+    <button id="run" disabled>Run</button>
+    <button id="dl" disabled>Export CSV</button>
+    <span id="status" class="muted">loading...</span>
+  </div>
+  <div class="row" id="chips"></div>
+</header>
+<main><div id="out" class="muted">Run a query to see results.</div></main>
+
+<script src="lib/sqljs/sql-wasm.js"></script>
+<script>
+/* CSV parser copied from Office/Design/sql space/model-explorer.html -- handles
+   quoted fields, escaped quotes, BOM and embedded newlines. Archi Documentation
+   contains all of these; split(",") silently corrupts them. */
+function parseCSV(text){
+  text = text.replace(/^﻿/, "").replace(/^[\r\n]+/, "");
+  var out = [], row = [], cur = "", q = false, i = 0;
+  while(i < text.length){
+    var ch = text[i];
+    if(q){
+      if(ch === '"'){
+        if(text[i+1] === '"'){ cur += '"'; i += 2; continue; }
+        q = false; i++; continue;
+      }
+      cur += ch; i++; continue;
+    }
+    if(ch === '"'){ q = true; i++; continue; }
+    if(ch === ','){ row.push(cur); cur = ""; i++; continue; }
+    if(ch === '\r'){ i++; continue; }
+    if(ch === '\n'){ row.push(cur); out.push(row); row = []; cur = ""; i++; continue; }
+    cur += ch; i++;
+  }
+  if(cur.length || row.length){ row.push(cur); out.push(row); }
+  return out;
+}
+
+var db = null, lastResult = null;
+var $ = function(id){ return document.getElementById(id); };
+
+var TABLES = ["elements", "relations", "properties"];
+
+var EXAMPLES = [
+  ["Count by type",      "SELECT Type, COUNT(*) AS n FROM elements GROUP BY Type ORDER BY n DESC;"],
+  ["Capabilities",       "SELECT Name, Documentation FROM elements WHERE Type='Capability' ORDER BY Name;"],
+  ["Relations by type",  "SELECT Type, COUNT(*) AS n FROM relations GROUP BY Type ORDER BY n DESC;"],
+  ["Most connected",     "SELECT e.Name, COUNT(*) AS links FROM relations r JOIN elements e\n  ON e.ID IN (r.Source, r.Target)\nGROUP BY e.ID ORDER BY links DESC LIMIT 20;"],
+  ["Properties",         "SELECT Key, COUNT(*) AS n FROM properties GROUP BY Key ORDER BY n DESC;"]
+];
+
+function ident(s){ return '"' + String(s).replace(/"/g, '""') + '"'; }
+
+function buildTable(name, txt){
+  return (function(){
+    var g = parseCSV(txt);
+    if(!g.length) return 0;
+    var cols = g[0].map(function(h){ return h.replace(/^\s+|\s+$/g, ""); });
+    db.run("CREATE TABLE " + ident(name) + " (" +
+           cols.map(ident).join(", ") + ");");
+    var ph = cols.map(function(){ return "?"; }).join(",");
+    var st = db.prepare("INSERT INTO " + ident(name) + " VALUES (" + ph + ");");
+    var n = 0;
+    for(var i = 1; i < g.length; i++){
+      var r = g[i];
+      if(r.length === 1 && r[0] === "") continue;   // trailing blank line
+      while(r.length < cols.length) r.push("");
+      st.run(r.slice(0, cols.length));
+      n++;
+    }
+    st.free();
+    return n;
+  })();
+}
+
+initSqlJs({ locateFile: function(f){ return "lib/sqljs/" + f; } })
+  .then(function(SQL){
+    db = new SQL.Database();
+    return Promise.all(TABLES.map(function(name){
+      return fetch("../data/" + name + ".csv").then(function(r){
+        if(!r.ok) throw new Error(name + ".csv -> HTTP " + r.status);
+        return r.text();
+      }).then(function(txt){ return buildTable(name, txt); });
+    }));
+  }).then(function(counts){
+  $("status").textContent = counts[0] + " elements, " + counts[1] +
+                            " relations, " + counts[2] + " properties";
+  $("run").disabled = false;
+  EXAMPLES.forEach(function(ex){
+    var c = document.createElement("span");
+    c.className = "chip"; c.textContent = ex[0];
+    c.onclick = function(){ $("q").value = ex[1]; run(); };
+    $("chips").appendChild(c);
+  });
+  run();
+}).catch(function(e){
+  $("status").textContent = "";
+  $("out").innerHTML = '<div class="err">Could not load the model data.\n\n' +
+    String(e && e.message || e).replace(/</g, "&lt;") + '</div>';
+});
+
+function run(){
+  if(!db) return;
+  var sql = $("q").value.trim();
+  if(!sql){ return; }
+  try{
+    var res = db.exec(sql);
+    lastResult = res && res.length ? res[res.length - 1] : null;
+    render(lastResult);
+    $("dl").disabled = !lastResult;
+  }catch(e){
+    lastResult = null; $("dl").disabled = true;
+    $("out").innerHTML = '<div class="err">' +
+      String(e.message || e).replace(/</g, "&lt;") + '</div>';
+  }
+}
+
+function render(r){
+  if(!r){ $("out").innerHTML = '<div class="muted">No rows.</div>'; return; }
+  var MAX = 500, rows = r.values.slice(0, MAX);
+  var h = "<table><thead><tr>" +
+    r.columns.map(function(c){ return "<th>" + esc(c) + "</th>"; }).join("") +
+    "</tr></thead><tbody>" +
+    rows.map(function(row){
+      return "<tr>" + row.map(function(v){
+        return "<td>" + esc(v === null ? "" : String(v)) + "</td>";
+      }).join("") + "</tr>";
+    }).join("") + "</tbody></table>";
+  if(r.values.length > MAX){
+    h += '<div class="muted" style="margin-top:8px">Showing ' + MAX +
+         " of " + r.values.length + " rows. Export CSV for all.</div>";
+  }else{
+    h += '<div class="muted" style="margin-top:8px">' + r.values.length + " row(s).</div>";
+  }
+  $("out").innerHTML = h;
+}
+
+function esc(s){
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+$("run").onclick = run;
+$("q").addEventListener("keydown", function(e){
+  if((e.ctrlKey || e.metaKey) && e.key === "Enter"){ e.preventDefault(); run(); }
+});
+
+$("dl").onclick = function(){
+  if(!lastResult) return;
+  var lines = [lastResult.columns.map(csvCell).join(",")];
+  lastResult.values.forEach(function(r){
+    lines.push(r.map(function(v){ return csvCell(v === null ? "" : v); }).join(","));
+  });
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([lines.join("\n")], {type:"text/csv"}));
+  a.download = "query-result.csv"; a.click();
+};
+
+function csvCell(v){ return '"' + String(v).replace(/"/g, '""') + '"'; }
+</script>
+</body>
+</html>

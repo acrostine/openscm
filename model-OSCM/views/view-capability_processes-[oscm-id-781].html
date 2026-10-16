@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Make-to-Stock - Processes</title>
+
+	<!-- JQUERY -->
+	<script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.4.1.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+	<!-- MARKDOWN -->
+	<script type="text/javascript" src="../../lib/marked/marked.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Make-to-Stock - Processes</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-viewpoint-"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-viewpoint_" target="hint"></a>
+            <!-- Or if a model (i.e has Purpose method) -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+			   <img class="diagram" src="../images/view-capability_processes-[oscm-id-781].png" alt="Make-to-Stock - Processes" usemap="#view-capability_processes-[oscm-id-781]map"/>
+			   <map name="view-capability_processes-[oscm-id-781]map">
+				  				<area shape="rect" coords="684,1484,699,1499" href="../views/view-domain_processes-[oscm-id-grp-plan].html"  target="view">
+				  		    <!-- Other diagram objects -->
+				  						<area shape="rect" coords="652,1452,667,1467" href="../views/view-capability_processes-[oscm-id-711].html"  target="view">
+				  				    <!-- Other diagram objects -->
+				  								<area shape="rect" coords="619,1419,634,1434" href="../views/view-process_context-[oscm-id-1872].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="464,1342,639,1439" href="../elements/oscm-id-1872.html"  target="element">
+
+				  				<area shape="rect" coords="433,1310,672,1472" href="../elements/oscm-id-711.html"  target="element">
+
+				  		<area shape="rect" coords="401,1278,704,1504" href="../elements/oscm-id-grp-plan.html"  target="element">
+				  				<area shape="rect" coords="1466,1484,1481,1499" href="../views/view-domain_processes-[oscm-id-grp-enable].html"  target="view">
+				  		    <!-- Other diagram objects -->
+				  						<area shape="rect" coords="1434,1452,1449,1467" href="../views/view-capability_processes-[oscm-id-501].html"  target="view">
+				  				    <!-- Other diagram objects -->
+				  								<area shape="rect" coords="1401,1419,1416,1434" href="../views/view-process_context-[oscm-id-2142].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="1246,1342,1421,1439" href="../elements/oscm-id-2142.html"  target="element">
+
+				  				<area shape="rect" coords="1215,1310,1454,1472" href="../elements/oscm-id-501.html"  target="element">
+
+				  		<area shape="rect" coords="1183,1278,1486,1504" href="../elements/oscm-id-grp-enable.html"  target="element">
+				  				<area shape="rect" coords="2248,1250,2263,1265" href="../views/view-domain_processes-[oscm-id-grp-make].html"  target="view">
+				  		    <!-- Other diagram objects -->
+				  						<area shape="rect" coords="2216,988,2231,1003" href="../views/view-capability_processes-[oscm-id-811].html"  target="view">
+				  				    <!-- Other diagram objects -->
+				  								<area shape="rect" coords="2183,553,2198,568" href="../views/view-process_context-[oscm-id-2612].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="2028,476,2203,573" href="../elements/oscm-id-2612.html"  target="element">
+				  								<area shape="rect" coords="2183,285,2198,300" href="../views/view-process_context-[oscm-id-2632].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="2028,208,2203,305" href="../elements/oscm-id-2632.html"  target="element">
+				  								<area shape="rect" coords="2183,821,2198,836" href="../views/view-process_context-[oscm-id-2592].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="2028,744,2203,841" href="../elements/oscm-id-2592.html"  target="element">
+				  								<area shape="rect" coords="2183,419,2198,434" href="../views/view-process_context-[oscm-id-2662].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="2028,342,2203,439" href="../elements/oscm-id-2662.html"  target="element">
+				  								<area shape="rect" coords="2183,687,2198,702" href="../views/view-process_context-[oscm-id-2622].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="2028,610,2203,707" href="../elements/oscm-id-2622.html"  target="element">
+				  								<area shape="rect" coords="2183,151,2198,166" href="../views/view-process_context-[oscm-id-2602].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="2028,74,2203,171" href="../elements/oscm-id-2602.html"  target="element">
+				  								<area shape="rect" coords="2183,955,2198,970" href="../views/view-process_context-[oscm-id-2672].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="2028,878,2203,975" href="../elements/oscm-id-2672.html"  target="element">
+
+				  				<area shape="rect" coords="1997,42,2236,1008" href="../elements/oscm-id-811.html"  target="element">
+				  						<area shape="rect" coords="1434,1218,1449,1233" href="../views/view-capability_processes-[oscm-id-801].html"  target="view">
+				  				    <!-- Other diagram objects -->
+				  								<area shape="rect" coords="1401,1185,1416,1200" href="../views/view-process_context-[oscm-id-2582].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="1246,1108,1421,1205" href="../elements/oscm-id-2582.html"  target="element">
+				  								<area shape="rect" coords="1401,917,1416,932" href="../views/view-process_context-[oscm-id-2542].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="1246,840,1421,937" href="../elements/oscm-id-2542.html"  target="element">
+				  								<area shape="rect" coords="1401,783,1416,798" href="../views/view-process_context-[oscm-id-2562].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="1246,706,1421,803" href="../elements/oscm-id-2562.html"  target="element">
+				  								<area shape="rect" coords="1401,1051,1416,1066" href="../views/view-process_context-[oscm-id-2552].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="1246,974,1421,1071" href="../elements/oscm-id-2552.html"  target="element">
+
+				  				<area shape="rect" coords="1215,674,1454,1238" href="../elements/oscm-id-801.html"  target="element">
+				  								<area shape="rect" coords="1401,589,1416,604" href="../views/view-process_context-[oscm-id-2382].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="1246,512,1421,609" href="../elements/oscm-id-2382.html"  target="element">
+				  								<area shape="rect" coords="228,427,243,442" href="../views/view-process_context-[oscm-id-2352].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="73,350,248,447" href="../elements/oscm-id-2352.html"  target="element">
+				  								<area shape="rect" coords="1011,589,1026,604" href="../views/view-process_context-[oscm-id-2372].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="856,512,1031,609" href="../elements/oscm-id-2372.html"  target="element">
+				  								<area shape="rect" coords="1792,589,1807,604" href="../views/view-process_context-[oscm-id-2402].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="1637,512,1812,609" href="../elements/oscm-id-2402.html"  target="element">
+				  								<area shape="rect" coords="228,570,243,585" href="../views/view-process_context-[oscm-id-2392].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="73,493,248,590" href="../elements/oscm-id-2392.html"  target="element">
+				  								<area shape="rect" coords="619,417,634,432" href="../views/view-process_context-[oscm-id-2362].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="464,340,639,437" href="../elements/oscm-id-2362.html"  target="element">
+				  								<area shape="rect" coords="619,551,634,566" href="../views/view-process_context-[oscm-id-2412].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="464,474,639,571" href="../elements/oscm-id-2412.html"  target="element">
+
+				  				<area shape="rect" coords="42,308,1845,642" href="../elements/oscm-id-781.html"  target="element">
+				  						<area shape="rect" coords="1825,256,1840,271" href="../views/view-capability_processes-[oscm-id-791].html"  target="view">
+				  				    <!-- Other diagram objects -->
+				  								<area shape="rect" coords="1792,223,1807,238" href="../views/view-process_context-[oscm-id-2492].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="1637,146,1812,243" href="../elements/oscm-id-2492.html"  target="element">
+
+				  				<area shape="rect" coords="1606,114,1845,276" href="../elements/oscm-id-791.html"  target="element">
+
+				  		<area shape="rect" coords="10,10,2268,1270" href="../elements/oscm-id-grp-make.html"  target="element">
+
+			   </map>
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+                    <!-- Analysis -->
+
+						<li role="presentation"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab" class="i18n-elements"></a></li>
+						<li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab" class="i18n-relationships"></a></li>
+                    <!-- Model, Query Tab -->
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="markdown-doc"><script type="text/plain">**A replenishment signal arrives.** It shows that inventory position has fallen below the approved Stock Target. The team converts that signal into a Production Plan of scheduled lots that will close the gap. Work Orders are released for each lot, and completed output is placed into inventory before any specific customer demand is assigned.
+
+          **The plan depends on a frozen specification and available capacity.** The Product Specification is frozen for the lot, and the Capacity Availability Record sizes and sequences production. Material is issued from inventory according to the Bill of Materials, and each completed lot is inspected against the specification. A lot that fails inspection is quarantined and a Nonconformance Report raised.
+
+          **The Finished Good Receipt posts the result.** It is issued when the completed lot passes inspection and is posted to the Inventory Record, restoring stock to the target level.</script></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>generated_by</td><td class="convertlinks no-margin" style="white-space:pre-wrap">build_archi_xml.py::gen_process_context_view</td></tr><tr><td>generator_path</td><td class="convertlinks no-margin" style="white-space:pre-wrap">pedro/capabilities/build_archi_xml_assign/build_archi_xml_assign.py</td></tr><tr><td>run_at</td><td class="convertlinks no-margin" style="white-space:pre-wrap">2026-10-10T17:55:56</td></tr><tr><td>view_type</td><td class="convertlinks no-margin" style="white-space:pre-wrap">capability_processes</td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="analysis">
+						<table class="table table-striped table-hover table-condensed" id="used-in-views">
+							<thead>
+								<tr><th colspan="2" class="i18n-used-in-views" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-viewpoint"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						<table class="table table-striped table-hover table-condensed" id="model-relations">
+							<thead>
+								<tr><th colspan="4" class="i18n-model-relations" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-type"></th>
+									<th class="i18n-source"></th>
+									<th class="i18n-target"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="elements">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+											    <td> <a href="../elements/oscm-id-grp-make.html" target="element"> M Make </a> </td>
+											    <td> <a href="../elements/oscm-id-grp-make.html" target="element" class="i18n-elementtype-Grouping">
+											    </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/oscm-id-791.html" target="element"> Make-to-Order </a> </td>
+													    <td> <a href="../elements/oscm-id-791.html" target="element" class="i18n-elementtype-Capability">
+													    </a> </td>
+													</tr>
+
+															<tr>
+															    <td> <a href="../elements/oscm-id-2492.html" target="element"> Transfer </a> </td>
+															    <td> <a href="../elements/oscm-id-2492.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2492].html" target="view"> Transfer - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2492].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-791].html" target="view"> Make-to-Order - Processes </a> </td>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-791].html" target="view" class="i18n-viewpoint-"> </a> </td>
+															</tr>
+													    <!-- Other graphical objects -->
+
+													
+													<tr>
+													    <td> <a href="../elements/oscm-id-781.html" target="element"> Make-to-Stock </a> </td>
+													    <td> <a href="../elements/oscm-id-781.html" target="element" class="i18n-elementtype-Capability">
+													    </a> </td>
+													</tr>
+
+															<tr>
+															    <td> <a href="../elements/oscm-id-2412.html" target="element"> Transfer </a> </td>
+															    <td> <a href="../elements/oscm-id-2412.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2412].html" target="view"> Transfer - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2412].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2362.html" target="element"> Issue/Stage Materials </a> </td>
+															    <td> <a href="../elements/oscm-id-2362.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2362].html" target="view"> Issue/Stage Materials - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2362].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2392.html" target="element"> Package </a> </td>
+															    <td> <a href="../elements/oscm-id-2392.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2392].html" target="view"> Package - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2392].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2402.html" target="element"> Dispose </a> </td>
+															    <td> <a href="../elements/oscm-id-2402.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2402].html" target="view"> Dispose - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2402].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2372.html" target="element"> Produce </a> </td>
+															    <td> <a href="../elements/oscm-id-2372.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2372].html" target="view"> Produce - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2372].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2352.html" target="element"> Create Schedule </a> </td>
+															    <td> <a href="../elements/oscm-id-2352.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2352].html" target="view"> Create Schedule - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2352].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2382.html" target="element"> Inspect </a> </td>
+															    <td> <a href="../elements/oscm-id-2382.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2382].html" target="view"> Inspect - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2382].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+													
+													<tr>
+													    <td> <a href="../elements/oscm-id-801.html" target="element"> Make-To-Engineering-Order </a> </td>
+													    <td> <a href="../elements/oscm-id-801.html" target="element" class="i18n-elementtype-Capability">
+													    </a> </td>
+													</tr>
+
+															<tr>
+															    <td> <a href="../elements/oscm-id-2552.html" target="element"> Inspect </a> </td>
+															    <td> <a href="../elements/oscm-id-2552.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2552].html" target="view"> Inspect - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2552].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2562.html" target="element"> Package </a> </td>
+															    <td> <a href="../elements/oscm-id-2562.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2562].html" target="view"> Package - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2562].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2542.html" target="element"> Produce </a> </td>
+															    <td> <a href="../elements/oscm-id-2542.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2542].html" target="view"> Produce - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2542].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2582.html" target="element"> Transfer </a> </td>
+															    <td> <a href="../elements/oscm-id-2582.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2582].html" target="view"> Transfer - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2582].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-801].html" target="view"> Make-To-Engineering-Order - Processes </a> </td>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-801].html" target="view" class="i18n-viewpoint-"> </a> </td>
+															</tr>
+													    <!-- Other graphical objects -->
+
+													
+													<tr>
+													    <td> <a href="../elements/oscm-id-811.html" target="element"> Re-Make </a> </td>
+													    <td> <a href="../elements/oscm-id-811.html" target="element" class="i18n-elementtype-Capability">
+													    </a> </td>
+													</tr>
+
+															<tr>
+															    <td> <a href="../elements/oscm-id-2672.html" target="element"> Dispose </a> </td>
+															    <td> <a href="../elements/oscm-id-2672.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2672].html" target="view"> Dispose - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2672].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2602.html" target="element"> Schedule Work Orders </a> </td>
+															    <td> <a href="../elements/oscm-id-2602.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2602].html" target="view"> Schedule Work Orders - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2602].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2622.html" target="element"> Examine </a> </td>
+															    <td> <a href="../elements/oscm-id-2622.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2622].html" target="view"> Examine - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2622].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2662.html" target="element"> Repackage </a> </td>
+															    <td> <a href="../elements/oscm-id-2662.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2662].html" target="view"> Repackage - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2662].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2592.html" target="element"> Create Work Order </a> </td>
+															    <td> <a href="../elements/oscm-id-2592.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2592].html" target="view"> Create Work Order - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2592].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2632.html" target="element"> Issue Material </a> </td>
+															    <td> <a href="../elements/oscm-id-2632.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2632].html" target="view"> Issue Material - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2632].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../elements/oscm-id-2612.html" target="element"> Issue Product </a> </td>
+															    <td> <a href="../elements/oscm-id-2612.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2612].html" target="view"> Issue Product - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2612].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-811].html" target="view"> Re-Make - Processes </a> </td>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-811].html" target="view" class="i18n-viewpoint-"> </a> </td>
+															</tr>
+													    <!-- Other graphical objects -->
+
+													
+													<tr>
+													    <td> <a href="../views/view-domain_processes-[oscm-id-grp-make].html" target="view"> M Make - Processes </a> </td>
+													    <td> <a href="../views/view-domain_processes-[oscm-id-grp-make].html" target="view" class="i18n-viewpoint-"> </a> </td>
+													</tr>
+											    <!-- Other graphical objects -->
+
+											
+											<tr>
+											    <td> <a href="../elements/oscm-id-grp-enable.html" target="element"> E Enable </a> </td>
+											    <td> <a href="../elements/oscm-id-grp-enable.html" target="element" class="i18n-elementtype-Grouping">
+											    </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/oscm-id-501.html" target="element"> Sell by Proposal </a> </td>
+													    <td> <a href="../elements/oscm-id-501.html" target="element" class="i18n-elementtype-Capability">
+													    </a> </td>
+													</tr>
+
+															<tr>
+															    <td> <a href="../elements/oscm-id-2142.html" target="element"> Inspect </a> </td>
+															    <td> <a href="../elements/oscm-id-2142.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2142].html" target="view"> Inspect - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2142].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-501].html" target="view"> Sell by Proposal - Processes </a> </td>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-501].html" target="view" class="i18n-viewpoint-"> </a> </td>
+															</tr>
+													    <!-- Other graphical objects -->
+
+													
+													<tr>
+													    <td> <a href="../views/view-domain_processes-[oscm-id-grp-enable].html" target="view"> E Enable - Processes </a> </td>
+													    <td> <a href="../views/view-domain_processes-[oscm-id-grp-enable].html" target="view" class="i18n-viewpoint-"> </a> </td>
+													</tr>
+											    <!-- Other graphical objects -->
+
+											
+											<tr>
+											    <td> <a href="../elements/oscm-id-grp-plan.html" target="element"> P Plan </a> </td>
+											    <td> <a href="../elements/oscm-id-grp-plan.html" target="element" class="i18n-elementtype-Grouping">
+											    </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/oscm-id-711.html" target="element"> Plan Make </a> </td>
+													    <td> <a href="../elements/oscm-id-711.html" target="element" class="i18n-elementtype-Capability">
+													    </a> </td>
+													</tr>
+
+															<tr>
+															    <td> <a href="../elements/oscm-id-1872.html" target="element"> Gather Inventory &amp; Schedule </a> </td>
+															    <td> <a href="../elements/oscm-id-1872.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-1872].html" target="view"> Gather Inventory & Schedule - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-1872].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-711].html" target="view"> Plan Make - Processes </a> </td>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-711].html" target="view" class="i18n-viewpoint-"> </a> </td>
+															</tr>
+													    <!-- Other graphical objects -->
+
+													
+													<tr>
+													    <td> <a href="../views/view-domain_processes-[oscm-id-grp-plan].html" target="view"> P Plan - Processes </a> </td>
+													    <td> <a href="../views/view-domain_processes-[oscm-id-grp-plan].html" target="view" class="i18n-viewpoint-"> </a> </td>
+													</tr>
+											    <!-- Other graphical objects -->
+
+											
+
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="relationships">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+										<th class="i18n-source"></th>
+										<th class="i18n-target"></th>
+									</tr>
+								</thead>
+								<tbody>
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+															<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+													
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-7993ae96d2f9.html" target="element"> Finished Good Receipt </a> </td>
+																						<td> <a href="../elements/oscm-flow-7993ae96d2f9.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2412.html" target="element"> Transfer </a> </td>
+																						<td> <a href="../elements/oscm-id-2662.html" target="element"> Repackage </a> </td>
+																					</tr>
+
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-d5126d8efb6f.html" target="element"> Material Consumption Record </a> </td>
+																						<td> <a href="../elements/oscm-flow-d5126d8efb6f.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2362.html" target="element"> Issue/Stage Materials </a> </td>
+																						<td> <a href="../elements/oscm-id-2492.html" target="element"> Transfer </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-ffdde46c84bf.html" target="element"> Staged Material </a> </td>
+																						<td> <a href="../elements/oscm-flow-ffdde46c84bf.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2362.html" target="element"> Issue/Stage Materials </a> </td>
+																						<td> <a href="../elements/oscm-id-2372.html" target="element"> Produce </a> </td>
+																					</tr>
+
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-6ce93cb46065.html" target="element"> Packaging Record </a> </td>
+																						<td> <a href="../elements/oscm-flow-6ce93cb46065.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2392.html" target="element"> Package </a> </td>
+																						<td> <a href="../elements/oscm-id-2582.html" target="element"> Transfer </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-b1f64cdd4eb0.html" target="element"> Packaged Stock Unit </a> </td>
+																						<td> <a href="../elements/oscm-flow-b1f64cdd4eb0.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2392.html" target="element"> Package </a> </td>
+																						<td> <a href="../elements/oscm-id-2412.html" target="element"> Transfer </a> </td>
+																					</tr>
+
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-b7425f91a8fe.html" target="element"> Disposition Decision </a> </td>
+																						<td> <a href="../elements/oscm-flow-b7425f91a8fe.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2402.html" target="element"> Dispose </a> </td>
+																						<td> <a href="../elements/oscm-id-2592.html" target="element"> Create Work Order </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-02aae3a79732.html" target="element"> Disposition Decision </a> </td>
+																						<td> <a href="../elements/oscm-flow-02aae3a79732.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2402.html" target="element"> Dispose </a> </td>
+																						<td> <a href="../elements/oscm-id-2672.html" target="element"> Dispose </a> </td>
+																					</tr>
+
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-ee03af0afcb8.html" target="element"> Produced Lot </a> </td>
+																						<td> <a href="../elements/oscm-flow-ee03af0afcb8.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2372.html" target="element"> Produce </a> </td>
+																						<td> <a href="../elements/oscm-id-2552.html" target="element"> Inspect </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-220e2483bf94.html" target="element"> Produced Lot </a> </td>
+																						<td> <a href="../elements/oscm-flow-220e2483bf94.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2372.html" target="element"> Produce </a> </td>
+																						<td> <a href="../elements/oscm-id-2382.html" target="element"> Inspect </a> </td>
+																					</tr>
+
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-49a0f3626a2e.html" target="element"> Work Order </a> </td>
+																						<td> <a href="../elements/oscm-flow-49a0f3626a2e.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2352.html" target="element"> Create Schedule </a> </td>
+																						<td> <a href="../elements/oscm-id-2362.html" target="element"> Issue/Stage Materials </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-c414190947bb.html" target="element"> Work Order </a> </td>
+																						<td> <a href="../elements/oscm-flow-c414190947bb.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2352.html" target="element"> Create Schedule </a> </td>
+																						<td> <a href="../elements/oscm-id-2372.html" target="element"> Produce </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-b9601e94fbfd.html" target="element"> Production Schedule </a> </td>
+																						<td> <a href="../elements/oscm-flow-b9601e94fbfd.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2352.html" target="element"> Create Schedule </a> </td>
+																						<td> <a href="../elements/oscm-id-2602.html" target="element"> Schedule Work Orders </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-573990cb0bb9.html" target="element"> Production Schedule </a> </td>
+																						<td> <a href="../elements/oscm-flow-573990cb0bb9.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2352.html" target="element"> Create Schedule </a> </td>
+																						<td> <a href="../elements/oscm-id-1872.html" target="element"> Gather Inventory &amp; Schedule </a> </td>
+																					</tr>
+
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-1726c207fa6d.html" target="element"> Nonconformance Report </a> </td>
+																						<td> <a href="../elements/oscm-flow-1726c207fa6d.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2382.html" target="element"> Inspect </a> </td>
+																						<td> <a href="../elements/oscm-id-2402.html" target="element"> Dispose </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-887f4057c258.html" target="element"> Quality Record </a> </td>
+																						<td> <a href="../elements/oscm-flow-887f4057c258.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2382.html" target="element"> Inspect </a> </td>
+																						<td> <a href="../elements/oscm-id-2562.html" target="element"> Package </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-a2f179b583bb.html" target="element"> Nonconformance Report </a> </td>
+																						<td> <a href="../elements/oscm-flow-a2f179b583bb.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2382.html" target="element"> Inspect </a> </td>
+																						<td> <a href="../elements/oscm-id-2492.html" target="element"> Transfer </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-3e48842b7d58.html" target="element"> Nonconformance Report </a> </td>
+																						<td> <a href="../elements/oscm-flow-3e48842b7d58.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2382.html" target="element"> Inspect </a> </td>
+																						<td> <a href="../elements/oscm-id-2622.html" target="element"> Examine </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-f2c75b7acd90.html" target="element"> Quality Record </a> </td>
+																						<td> <a href="../elements/oscm-flow-f2c75b7acd90.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2382.html" target="element"> Inspect </a> </td>
+																						<td> <a href="../elements/oscm-id-2612.html" target="element"> Issue Product </a> </td>
+																					</tr>
+
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+													
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-d7bfb7ccdfe4.html" target="element"> Nonconformance Report </a> </td>
+																						<td> <a href="../elements/oscm-flow-d7bfb7ccdfe4.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2552.html" target="element"> Inspect </a> </td>
+																						<td> <a href="../elements/oscm-id-2402.html" target="element"> Dispose </a> </td>
+																					</tr>
+
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-5c0433ed5706.html" target="element"> Produced Lot </a> </td>
+																						<td> <a href="../elements/oscm-flow-5c0433ed5706.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2542.html" target="element"> Produce </a> </td>
+																						<td> <a href="../elements/oscm-id-2382.html" target="element"> Inspect </a> </td>
+																					</tr>
+
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+															<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+													
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-9692e68499f5.html" target="element"> Material Availability </a> </td>
+																						<td> <a href="../elements/oscm-flow-9692e68499f5.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2632.html" target="element"> Issue Material </a> </td>
+																						<td> <a href="../elements/oscm-id-2362.html" target="element"> Issue/Stage Materials </a> </td>
+																					</tr>
+
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+															<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+													
+													<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+											
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-84f940413aee.html" target="element"> Nonconformity Report </a> </td>
+																						<td> <a href="../elements/oscm-flow-84f940413aee.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2142.html" target="element"> Inspect </a> </td>
+																						<td> <a href="../elements/oscm-id-2402.html" target="element"> Dispose </a> </td>
+																					</tr>
+
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+															<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+													
+													<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+											
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+															<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+													
+													<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+											
+
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

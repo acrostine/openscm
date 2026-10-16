@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Inspect</title>
+
+	<!-- JQUERY -->
+	<script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.4.1.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+	<!-- MARKDOWN -->
+	<script type="text/javascript" src="../../lib/marked/marked.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Inspect</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-elementtype-BusinessProcess"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-BusinessProcess" target="hint"></a>
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+                    <!-- Analysis -->
+                    	<li role="presentation"><a href="#analysis" aria-controls="analysis" role="tab" data-toggle="tab" class="i18n-analysis"></a></li>
+
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="markdown-doc"><script type="text/plain">**Production declares completion, quality decides.**
+A lot sits finished, but nobody knows whether it actually meets the order until it is inspected. This process measures the output against the acceptance criteria set out for the order. It records the results and gives every lot one of two outcomes: a pass that releases it for packaging, or a fail that quarantines it and raises a Nonconformance Report. The quality decision is the gate; nothing moves without it.
+
+**It checks output against criteria.**
+The Production Record says which operations were completed and which materials were used. The Engineering Specification sets the acceptance criteria, test methods, and allowed tolerances. The Quality Standard provides the overarching thresholds. When the measured values fall outside the allowed tolerances, the lot does not pass and is quarantined until disposition.
+
+**The Quality Record carries the decision.**
+It lists every required check, the measured result from each, and the conforming decision. That record is what lets a produced lot move on to packaging, because it is the evidence that the order's acceptance criteria were met.</script></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>level</td><td class="convertlinks no-margin" style="white-space:pre-wrap">3</td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="analysis">
+						<table class="table table-striped table-hover table-condensed" id="used-in-views">
+							<thead>
+								<tr><th colspan="2" class="i18n-used-in-views" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-viewpoint"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="used-in-views-view-elements_map-[OSCM]">
+																	<td><a href="../views/view-elements_map-[OSCM].html" target="view" title="Elements Map"> Elements Map </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2492]">
+																	<td><a href="../views/view-process_context-[oscm-id-2492].html" target="view" title="Transfer - Context"> Transfer - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-801]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-801].html" target="view" title="Make-To-Engineering-Order - Processes"> Make-To-Engineering-Order - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2402]">
+																	<td><a href="../views/view-process_context-[oscm-id-2402].html" target="view" title="Dispose - Context"> Dispose - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2552]">
+																	<td><a href="../views/view-process_context-[oscm-id-2552].html" target="view" title="Inspect - Context"> Inspect - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2562]">
+																	<td><a href="../views/view-process_context-[oscm-id-2562].html" target="view" title="Package - Context"> Package - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-781]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-781].html" target="view" title="Make-to-Stock - Processes"> Make-to-Stock - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2372]">
+																	<td><a href="../views/view-process_context-[oscm-id-2372].html" target="view" title="Produce - Context"> Produce - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-811]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-811].html" target="view" title="Re-Make - Processes"> Re-Make - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_processes-[oscm-id-grp-make]">
+																	<td><a href="../views/view-domain_processes-[oscm-id-grp-make].html" target="view" title="M Make - Processes"> M Make - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-791]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-791].html" target="view" title="Make-to-Order - Processes"> Make-to-Order - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2572]">
+																	<td><a href="../views/view-process_context-[oscm-id-2572].html" target="view" title="Dispose - Context"> Dispose - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2622]">
+																	<td><a href="../views/view-process_context-[oscm-id-2622].html" target="view" title="Examine - Context"> Examine - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-processes_overview-[OSCM]">
+																	<td><a href="../views/view-processes_overview-[OSCM].html" target="view" title="Processes Overview"> Processes Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2512]">
+																	<td><a href="../views/view-process_context-[oscm-id-2512].html" target="view" title="Complete Order Engineering - Context"> Complete Order Engineering - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2542]">
+																	<td><a href="../views/view-process_context-[oscm-id-2542].html" target="view" title="Produce - Context"> Produce - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr>
+							</tbody>
+						</table>
+						<table class="table table-striped table-hover table-condensed" id="model-relations">
+							<thead>
+								<tr><th colspan="4" class="i18n-model-relations" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-type"></th>
+									<th class="i18n-source"></th>
+									<th class="i18n-target"></th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+											<td><a href="../elements/oscm-flow-321d37ff3a6b.html" target="element" title="Nonconformance Report">Nonconformance Report</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+											<td><a href="../elements/oscm-id-2572.html" target="element"> Dispose</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-flow-43b255dd2484.html" target="element" title="Quality Record">Quality Record</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+											<td><a href="../elements/oscm-id-2562.html" target="element"> Package</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-flow-79a073639d16.html" target="element" title="Nonconformance Report">Nonconformance Report</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+											<td><a href="../elements/oscm-id-2492.html" target="element"> Transfer</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-flow-94f85b035db0.html" target="element" title="Nonconformance Report">Nonconformance Report</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+											<td><a href="../elements/oscm-id-2622.html" target="element"> Examine</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-flow-d7bfb7ccdfe4.html" target="element" title="Nonconformance Report">Nonconformance Report</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+											<td><a href="../elements/oscm-id-2402.html" target="element"> Dispose</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-333.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp12.html" target="element"> Orders Defect Free Ratio (DP12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-514.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-rs13.html" target="element"> Make Cycle Time (RS13)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-70.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae122.html" target="element"> Days of WIP Inventory (AE122)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-76.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae1222.html" target="element"> Work-in-Process Inventory - Restricted (AE1222)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-25522.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+											<td><a href="../elements/oscm-id-801.html" target="element"> Make-To-Engineering-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-serv-34.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-ServingRelationship" /></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+											<td><a href="../elements/oscm-elem-id-vs-p2p.html" target="element"> Procure-to-Pay</a></td>
+										</tr>
+									<tr>
+											<td><a href="../elements/oscm-flow-1a1396d76d2a.html" target="element" title="Engineering Specification">Engineering Specification</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-2512.html" target="element"> Complete Order Engineering</a></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-flow-6fb90ef032e6.html" target="element" title="Produced Lot">Produced Lot</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-2542.html" target="element"> Produce</a></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-flow-ee03af0afcb8.html" target="element" title="Produced Lot">Produced Lot</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-2372.html" target="element"> Produce</a></td>
+											<td><a href="../elements/oscm-id-2552.html" target="element"> Inspect</a></td>
+										</tr>
+							</tbody>
+						</table>
+					</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

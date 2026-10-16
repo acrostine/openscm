@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OpenSCM: Open Supply Chain Model — Search</title>
+<style>
+body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0;
+       background: #f4f3ee; color: #2c2c2a; overflow-y: auto; }
+main.content { padding: 24px 28px; min-width: 0; }
+h1 { font-size: 20px; font-weight: 700; margin: 0 0 4px; }
+p.sub { color: #5f5e5a; margin: 0 0 14px; font-size: 13px; }
+input.search-box { width: 100%; max-width: 480px; padding: 10px 14px; font-size: 15px;
+           border: 1px solid #d8d6cd; border-radius: 8px; margin-bottom: 18px;
+           box-sizing: border-box; }
+input.search-box:focus { outline: none; border-color: #639922; }
+p.count { font-size: 12px; color: #888; margin: 0 0 14px; }
+.grid.compact { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--tile, 300px), 1fr));
+        gap: 10px; }
+.lb-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 0 0 14px; }
+.lb-row input.search-box { flex: 1 1 260px; margin: 0; }
+.lb-row .fbar { margin: 0; }
+.lb-size { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #33424f; }
+.lb-size label { font-weight: 700; }
+.lb-size button { width: 26px; height: 26px; border: 1px solid #d8d6cd; border-radius: 6px;
+        background: #fff; cursor: pointer; font-weight: 700; line-height: 1; padding: 0; }
+.lb-size input[type=range] { width: 140px; accent-color: #639922; }
+a.tile { display: block; text-decoration: none; color: inherit; background: #fff;
+         border: 1px solid #d8d6cd; border-radius: 8px; overflow: hidden; }
+a.tile:hover { border-color: #639922; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.thumb { width: 100%; height: calc(var(--tile, 300px) * 0.6); object-fit: contain; background: #fafafa;
+         border-bottom: 1px solid #eee; display: block; }
+.cap { padding: 6px 8px; font-size: 11px; font-weight: 500; }
+a.tile.hidden { display: none; }
+
+.hidden { display: none !important; }
+.fbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+        margin: 0 0 16px; font-size: 13px; }
+.fbar label { font-weight: 700; color: #33424f; }
+.fbar select { padding: 7px 10px; font-size: 13px; border: 1px solid #d8d6cd;
+        border-radius: 8px; background: #fff; color: #2c2c2a; max-width: 100%; }
+.fbar select:focus { outline: none; border-color: #639922; }
+.fbar a { color: #639922; font-weight: 700; text-decoration: none; }
+.fbar .n { color: #888; font-size: 12px; }
+p.maps { font-size: 13px; margin: 0 0 14px; color: #5f5e5a; }
+p.maps a { color: #639922; font-weight: 700; text-decoration: none; }
+</style>
+</head>
+<body>
+<main class="content">
+<h1>OpenSCM: Open Supply Chain Model — Search</h1>
+<p class="sub">Type any word from a diagram's title -- e.g. "Context" -- to filter to matching pictures.</p>
+<p class="maps">Maps: <a target="view" href="nav-home_thumbs.html">Home maps</a> &middot; <a target="view" href="nav-catalogue_thumbs.html">Catalogue</a> &middot; <a target="view" href="view-capabilities_overview-[OSCM]_thumbs.html">Capabilities Overview</a> &middot; <a target="view" href="view-processes_overview-[OSCM]_thumbs.html">Processes Overview</a></p>
+<div class="lb-row"><input class="search-box" id="search-box" type="text" placeholder="Search by title..."><div class="fbar" id="fbar"><label for="type-filter">View type</label><select id="type-filter" data-filter="type"><option value="">All types (364)</option><option value="home">Home (1)</option><option value="system_overview">System overview (1)</option><option value="elements_map">Elements map (1)</option><option value="capabilities_overview">Capabilities overview (1)</option><option value="processes_overview">Processes overview (1)</option><option value="domain_capabilities">Domain capabilities (5)</option><option value="domain_processes">Domain processes (5)</option><option value="capability_context">Capability context (41)</option><option value="capability_processes">Capability processes (28)</option><option value="process_context">Process context (270)</option><option value="value_stream_context">Value stream context (9)</option><option value="metrics_catalogue">Metrics catalogue (1)</option></select><a href="#" id="fbar-clear">Clear</a></div><div class="lb-size" id="lb-size"><label for="lb-sizeRange">Size</label><button type="button" id="lb-sizeDown" aria-label="Smaller">&minus;</button><input type="range" id="lb-sizeRange" min="140" max="720" step="20" value="300"><button type="button" id="lb-sizeUp" aria-label="Larger">+</button></div></div>
+<p class="count" id="search-count">364 of 364 diagrams</p>
+<div class="grid compact">
+  <a class="tile" target="view" href="../views/view-home-[OSCM].html" data-title="home" data-type="home">
+    <img class="thumb" src="../images/view-home-[OSCM].png" alt="Home" loading="lazy">
+    <div class="cap">Home</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-system_overview-[OSCM].html" data-title="system overview" data-type="system_overview">
+    <img class="thumb" src="../images/view-system_overview-[OSCM].png" alt="System Overview" loading="lazy">
+    <div class="cap">System Overview</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-elements_map-[OSCM].html" data-title="elements map" data-type="elements_map">
+    <img class="thumb" src="../images/view-elements_map-[OSCM].png" alt="Elements Map" loading="lazy">
+    <div class="cap">Elements Map</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capabilities_overview-[OSCM].html" data-title="capabilities overview" data-type="capabilities_overview">
+    <img class="thumb" src="../images/view-capabilities_overview-[OSCM].png" alt="Capabilities Overview" loading="lazy">
+    <div class="cap">Capabilities Overview</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-processes_overview-[OSCM].html" data-title="processes overview" data-type="processes_overview">
+    <img class="thumb" src="../images/view-processes_overview-[OSCM].png" alt="Processes Overview" loading="lazy">
+    <div class="cap">Processes Overview</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-domain_capabilities-[oscm-id-grp-deliver].html" data-title="d deliver - capabilities" data-type="domain_capabilities">
+    <img class="thumb" src="../images/view-domain_capabilities-[oscm-id-grp-deliver].png" alt="D Deliver - Capabilities" loading="lazy">
+    <div class="cap">D Deliver - Capabilities</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-domain_capabilities-[oscm-id-grp-enable].html" data-title="e enable - capabilities" data-type="domain_capabilities">
+    <img class="thumb" src="../images/view-domain_capabilities-[oscm-id-grp-enable].png" alt="E Enable - Capabilities" loading="lazy">
+    <div class="cap">E Enable - Capabilities</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-domain_capabilities-[oscm-id-grp-make].html" data-title="m make - capabilities" data-type="domain_capabilities">
+    <img class="thumb" src="../images/view-domain_capabilities-[oscm-id-grp-make].png" alt="M Make - Capabilities" loading="lazy">
+    <div class="cap">M Make - Capabilities</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-domain_capabilities-[oscm-id-grp-plan].html" data-title="p plan - capabilities" data-type="domain_capabilities">
+    <img class="thumb" src="../images/view-domain_capabilities-[oscm-id-grp-plan].png" alt="P Plan - Capabilities" loading="lazy">
+    <div class="cap">P Plan - Capabilities</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-domain_capabilities-[oscm-id-grp-source].html" data-title="s source - capabilities" data-type="domain_capabilities">
+    <img class="thumb" src="../images/view-domain_capabilities-[oscm-id-grp-source].png" alt="S Source - Capabilities" loading="lazy">
+    <div class="cap">S Source - Capabilities</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-domain_processes-[oscm-id-grp-deliver].html" data-title="d deliver - processes" data-type="domain_processes">
+    <img class="thumb" src="../images/view-domain_processes-[oscm-id-grp-deliver].png" alt="D Deliver - Processes" loading="lazy">
+    <div class="cap">D Deliver - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-domain_processes-[oscm-id-grp-enable].html" data-title="e enable - processes" data-type="domain_processes">
+    <img class="thumb" src="../images/view-domain_processes-[oscm-id-grp-enable].png" alt="E Enable - Processes" loading="lazy">
+    <div class="cap">E Enable - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-domain_processes-[oscm-id-grp-make].html" data-title="m make - processes" data-type="domain_processes">
+    <img class="thumb" src="../images/view-domain_processes-[oscm-id-grp-make].png" alt="M Make - Processes" loading="lazy">
+    <div class="cap">M Make - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-domain_processes-[oscm-id-grp-plan].html" data-title="p plan - processes" data-type="domain_processes">
+    <img class="thumb" src="../images/view-domain_processes-[oscm-id-grp-plan].png" alt="P Plan - Processes" loading="lazy">
+    <div class="cap">P Plan - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-domain_processes-[oscm-id-grp-source].html" data-title="s source - processes" data-type="domain_processes">
+    <img class="thumb" src="../images/view-domain_processes-[oscm-id-grp-source].png" alt="S Source - Processes" loading="lazy">
+    <div class="cap">S Source - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-621].html" data-title="align network - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-621].png" alt="Align Network - Context" loading="lazy">
+    <div class="cap">Align Network - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-631].html" data-title="align processes - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-631].png" alt="Align Processes - Context" loading="lazy">
+    <div class="cap">Align Processes - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-641].html" data-title="align resources - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-641].png" alt="Align Resources - Context" loading="lazy">
+    <div class="cap">Align Resources - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-611].html" data-title="align strategy - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-611].png" alt="Align Strategy - Context" loading="lazy">
+    <div class="cap">Align Strategy - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-601].html" data-title="assist with advisory - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-601].png" alt="Assist with Advisory - Context" loading="lazy">
+    <div class="cap">Assist with Advisory - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-581].html" data-title="assist with claim - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-581].png" alt="Assist with Claim - Context" loading="lazy">
+    <div class="cap">Assist with Claim - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-591].html" data-title="assist with custom solution - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-591].png" alt="Assist with Custom Solution - Context" loading="lazy">
+    <div class="cap">Assist with Custom Solution - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-571].html" data-title="assist with inquiry - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-571].png" alt="Assist with Inquiry - Context" loading="lazy">
+    <div class="cap">Assist with Inquiry - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-541].html" data-title="contract by proposal - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-541].png" alt="Contract by Proposal - Context" loading="lazy">
+    <div class="cap">Contract by Proposal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-551].html" data-title="contract custom solution - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-551].png" alt="Contract Custom Solution - Context" loading="lazy">
+    <div class="cap">Contract Custom Solution - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-561].html" data-title="contract renewal - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-561].png" alt="Contract Renewal - Context" loading="lazy">
+    <div class="cap">Contract Renewal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-531].html" data-title="contract standard terms - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-531].png" alt="Contract Standard Terms - Context" loading="lazy">
+    <div class="cap">Contract Standard Terms - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-441].html" data-title="deliver returns - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-441].png" alt="Deliver Returns - Context" loading="lazy">
+    <div class="cap">Deliver Returns - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-821].html" data-title="deliver-from-stock - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-821].png" alt="Deliver-From-Stock - Context" loading="lazy">
+    <div class="cap">Deliver-From-Stock - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-431].html" data-title="deliver-to-engineering-order - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-431].png" alt="Deliver-To-Engineering-Order - Context" loading="lazy">
+    <div class="cap">Deliver-To-Engineering-Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-421].html" data-title="deliver-to-order - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-421].png" alt="Deliver-to-Order - Context" loading="lazy">
+    <div class="cap">Deliver-to-Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-801].html" data-title="make-to-engineering-order - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-801].png" alt="Make-To-Engineering-Order - Context" loading="lazy">
+    <div class="cap">Make-To-Engineering-Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-791].html" data-title="make-to-order - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-791].png" alt="Make-to-Order - Context" loading="lazy">
+    <div class="cap">Make-to-Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-781].html" data-title="make-to-stock - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-781].png" alt="Make-to-Stock - Context" loading="lazy">
+    <div class="cap">Make-to-Stock - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-661].html" data-title="manage compliance - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-661].png" alt="Manage Compliance - Context" loading="lazy">
+    <div class="cap">Manage Compliance - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-651].html" data-title="manage performance - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-651].png" alt="Manage Performance - Context" loading="lazy">
+    <div class="cap">Manage Performance - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-671].html" data-title="manage supply chain risk - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-671].png" alt="Manage Supply Chain Risk - Context" loading="lazy">
+    <div class="cap">Manage Supply Chain Risk - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-681].html" data-title="manage sustainability - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-681].png" alt="Manage Sustainability - Context" loading="lazy">
+    <div class="cap">Manage Sustainability - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-461].html" data-title="plan budgets - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-461].png" alt="Plan Budgets - Context" loading="lazy">
+    <div class="cap">Plan Budgets - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-721].html" data-title="plan deliver - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-721].png" alt="Plan Deliver - Context" loading="lazy">
+    <div class="cap">Plan Deliver - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-451].html" data-title="plan finance - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-451].png" alt="Plan Finance - Context" loading="lazy">
+    <div class="cap">Plan Finance - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-471].html" data-title="plan financial forecast - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-471].png" alt="Plan Financial Forecast - Context" loading="lazy">
+    <div class="cap">Plan Financial Forecast - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-711].html" data-title="plan make - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-711].png" alt="Plan Make - Context" loading="lazy">
+    <div class="cap">Plan Make - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-701].html" data-title="plan source - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-701].png" alt="Plan Source - Context" loading="lazy">
+    <div class="cap">Plan Source - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-691].html" data-title="plan supply chain operations - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-691].png" alt="Plan Supply Chain Operations - Context" loading="lazy">
+    <div class="cap">Plan Supply Chain Operations - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-811].html" data-title="re-make - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-811].png" alt="Re-Make - Context" loading="lazy">
+    <div class="cap">Re-Make - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-501].html" data-title="sell by proposal - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-501].png" alt="Sell by Proposal - Context" loading="lazy">
+    <div class="cap">Sell by Proposal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-511].html" data-title="sell custom solution - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-511].png" alt="Sell Custom Solution - Context" loading="lazy">
+    <div class="cap">Sell Custom Solution - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-491].html" data-title="sell on standard terms - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-491].png" alt="Sell on Standard Terms - Context" loading="lazy">
+    <div class="cap">Sell on Standard Terms - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-521].html" data-title="sell renewal - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-521].png" alt="Sell Renewal - Context" loading="lazy">
+    <div class="cap">Sell Renewal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-771].html" data-title="source returns - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-771].png" alt="Source Returns - Context" loading="lazy">
+    <div class="cap">Source Returns - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-761].html" data-title="source-to-engineering-order - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-761].png" alt="Source-to-Engineering-Order - Context" loading="lazy">
+    <div class="cap">Source-to-Engineering-Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-751].html" data-title="source-to-order - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-751].png" alt="Source-to-Order - Context" loading="lazy">
+    <div class="cap">Source-to-Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-741].html" data-title="source-to-replenish - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-741].png" alt="Source-to-Replenish - Context" loading="lazy">
+    <div class="cap">Source-to-Replenish - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-731].html" data-title="strategic sourcing - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-731].png" alt="Strategic Sourcing - Context" loading="lazy">
+    <div class="cap">Strategic Sourcing - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_context-[oscm-id-481].html" data-title="tax accounting - context" data-type="capability_context">
+    <img class="thumb" src="../images/view-capability_context-[oscm-id-481].png" alt="Tax Accounting - Context" loading="lazy">
+    <div class="cap">Tax Accounting - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-601].html" data-title="assist with advisory - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-601].png" alt="Assist with Advisory - Processes" loading="lazy">
+    <div class="cap">Assist with Advisory - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-591].html" data-title="assist with custom solution - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-591].png" alt="Assist with Custom Solution - Processes" loading="lazy">
+    <div class="cap">Assist with Custom Solution - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-571].html" data-title="assist with inquiry - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-571].png" alt="Assist with Inquiry - Processes" loading="lazy">
+    <div class="cap">Assist with Inquiry - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-541].html" data-title="contract by proposal - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-541].png" alt="Contract by Proposal - Processes" loading="lazy">
+    <div class="cap">Contract by Proposal - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-561].html" data-title="contract renewal - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-561].png" alt="Contract Renewal - Processes" loading="lazy">
+    <div class="cap">Contract Renewal - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-531].html" data-title="contract standard terms - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-531].png" alt="Contract Standard Terms - Processes" loading="lazy">
+    <div class="cap">Contract Standard Terms - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-441].html" data-title="deliver returns - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-441].png" alt="Deliver Returns - Processes" loading="lazy">
+    <div class="cap">Deliver Returns - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-821].html" data-title="deliver-from-stock - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-821].png" alt="Deliver-From-Stock - Processes" loading="lazy">
+    <div class="cap">Deliver-From-Stock - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-431].html" data-title="deliver-to-engineering-order - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-431].png" alt="Deliver-To-Engineering-Order - Processes" loading="lazy">
+    <div class="cap">Deliver-To-Engineering-Order - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-421].html" data-title="deliver-to-order - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-421].png" alt="Deliver-to-Order - Processes" loading="lazy">
+    <div class="cap">Deliver-to-Order - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-801].html" data-title="make-to-engineering-order - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-801].png" alt="Make-To-Engineering-Order - Processes" loading="lazy">
+    <div class="cap">Make-To-Engineering-Order - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-791].html" data-title="make-to-order - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-791].png" alt="Make-to-Order - Processes" loading="lazy">
+    <div class="cap">Make-to-Order - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-781].html" data-title="make-to-stock - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-781].png" alt="Make-to-Stock - Processes" loading="lazy">
+    <div class="cap">Make-to-Stock - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-661].html" data-title="manage compliance - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-661].png" alt="Manage Compliance - Processes" loading="lazy">
+    <div class="cap">Manage Compliance - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-651].html" data-title="manage performance - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-651].png" alt="Manage Performance - Processes" loading="lazy">
+    <div class="cap">Manage Performance - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-671].html" data-title="manage supply chain risk - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-671].png" alt="Manage Supply Chain Risk - Processes" loading="lazy">
+    <div class="cap">Manage Supply Chain Risk - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-681].html" data-title="manage sustainability - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-681].png" alt="Manage Sustainability - Processes" loading="lazy">
+    <div class="cap">Manage Sustainability - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-461].html" data-title="plan budgets - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-461].png" alt="Plan Budgets - Processes" loading="lazy">
+    <div class="cap">Plan Budgets - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-451].html" data-title="plan finance - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-451].png" alt="Plan Finance - Processes" loading="lazy">
+    <div class="cap">Plan Finance - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-471].html" data-title="plan financial forecast - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-471].png" alt="Plan Financial Forecast - Processes" loading="lazy">
+    <div class="cap">Plan Financial Forecast - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-711].html" data-title="plan make - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-711].png" alt="Plan Make - Processes" loading="lazy">
+    <div class="cap">Plan Make - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-811].html" data-title="re-make - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-811].png" alt="Re-Make - Processes" loading="lazy">
+    <div class="cap">Re-Make - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-501].html" data-title="sell by proposal - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-501].png" alt="Sell by Proposal - Processes" loading="lazy">
+    <div class="cap">Sell by Proposal - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-511].html" data-title="sell custom solution - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-511].png" alt="Sell Custom Solution - Processes" loading="lazy">
+    <div class="cap">Sell Custom Solution - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-491].html" data-title="sell on standard terms - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-491].png" alt="Sell on Standard Terms - Processes" loading="lazy">
+    <div class="cap">Sell on Standard Terms - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-521].html" data-title="sell renewal - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-521].png" alt="Sell Renewal - Processes" loading="lazy">
+    <div class="cap">Sell Renewal - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-731].html" data-title="strategic sourcing - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-731].png" alt="Strategic Sourcing - Processes" loading="lazy">
+    <div class="cap">Strategic Sourcing - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-capability_processes-[oscm-id-481].html" data-title="tax accounting - processes" data-type="capability_processes">
+    <img class="thumb" src="../images/view-capability_processes-[oscm-id-481].png" alt="Tax Accounting - Processes" loading="lazy">
+    <div class="cap">Tax Accounting - Processes</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-912].html" data-title="analyze business plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-912].png" alt="Analyze Business Plan - Context" loading="lazy">
+    <div class="cap">Analyze Business Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1332].html" data-title="analyze change portfolios - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1332].png" alt="Analyze Change Portfolios - Context" loading="lazy">
+    <div class="cap">Analyze Change Portfolios - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-952].html" data-title="analyze competitive landscape - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-952].png" alt="Analyze Competitive Landscape - Context" loading="lazy">
+    <div class="cap">Analyze Competitive Landscape - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1952].html" data-title="analyze delivery plan deviations - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1952].png" alt="Analyze Delivery Plan Deviations - Context" loading="lazy">
+    <div class="cap">Analyze Delivery Plan Deviations - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1902].html" data-title="analyze make plan deviations - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1902].png" alt="Analyze Make Plan Deviations - Context" loading="lazy">
+    <div class="cap">Analyze Make Plan Deviations - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1112].html" data-title="analyze network constraints - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1112].png" alt="Analyze Network Constraints - Context" loading="lazy">
+    <div class="cap">Analyze Network Constraints - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1122].html" data-title="analyze network performance - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1122].png" alt="Analyze Network Performance - Context" loading="lazy">
+    <div class="cap">Analyze Network Performance - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1102].html" data-title="analyze network standardization - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1102].png" alt="Analyze Network Standardization - Context" loading="lazy">
+    <div class="cap">Analyze Network Standardization - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1242].html" data-title="analyze process performance - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1242].png" alt="Analyze Process Performance - Context" loading="lazy">
+    <div class="cap">Analyze Process Performance - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1232].html" data-title="analyze process standardization - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1232].png" alt="Analyze Process Standardization - Context" loading="lazy">
+    <div class="cap">Analyze Process Standardization - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1482].html" data-title="analyze reports - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1482].png" alt="Analyze Reports - Context" loading="lazy">
+    <div class="cap">Analyze Reports - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1632].html" data-title="analyze risks - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1632].png" alt="Analyze Risks - Context" loading="lazy">
+    <div class="cap">Analyze Risks - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1852].html" data-title="analyze source plan deviations - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1852].png" alt="Analyze Source Plan Deviations - Context" loading="lazy">
+    <div class="cap">Analyze Source Plan Deviations - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-972].html" data-title="analyze strategic market priorities - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-972].png" alt="Analyze Strategic Market Priorities - Context" loading="lazy">
+    <div class="cap">Analyze Strategic Market Priorities - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1192].html" data-title="analyze supply chain network - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1192].png" alt="Analyze Supply Chain Network - Context" loading="lazy">
+    <div class="cap">Analyze Supply Chain Network - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1802].html" data-title="analyze supply chain plan deviations - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1802].png" alt="Analyze Supply Chain Plan Deviations - Context" loading="lazy">
+    <div class="cap">Analyze Supply Chain Plan Deviations - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1062].html" data-title="analyze supply chain strategy - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1062].png" alt="Analyze Supply Chain Strategy - Context" loading="lazy">
+    <div class="cap">Analyze Supply Chain Strategy - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1972].html" data-title="analyze supply market - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1972].png" alt="Analyze Supply Market - Context" loading="lazy">
+    <div class="cap">Analyze Supply Market - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1682].html" data-title="analyze sustainability goals - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1682].png" alt="Analyze Sustainability Goals - Context" loading="lazy">
+    <div class="cap">Analyze Sustainability Goals - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1402].html" data-title="analyze training portfolio - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1402].png" alt="Analyze Training Portfolio - Context" loading="lazy">
+    <div class="cap">Analyze Training Portfolio - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2092].html" data-title="approve payment - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2092].png" alt="Approve Payment - Context" loading="lazy">
+    <div class="cap">Approve Payment - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2172].html" data-title="approve payment - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2172].png" alt="Approve Payment - Context" loading="lazy">
+    <div class="cap">Approve Payment - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2262].html" data-title="approve payment - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2262].png" alt="Approve Payment - Context" loading="lazy">
+    <div class="cap">Approve Payment - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1432].html" data-title="assess budget gaps - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1432].png" alt="Assess Budget Gaps - Context" loading="lazy">
+    <div class="cap">Assess Budget Gaps - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1282].html" data-title="assess business rules changes - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1282].png" alt="Assess Business Rules Changes - Context" loading="lazy">
+    <div class="cap">Assess Business Rules Changes - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1292].html" data-title="assess organizational changes - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1292].png" alt="Assess Organizational Changes - Context" loading="lazy">
+    <div class="cap">Assess Organizational Changes - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1572].html" data-title="assess regulatory impact - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1572].png" alt="Assess Regulatory Impact - Context" loading="lazy">
+    <div class="cap">Assess Regulatory Impact - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1302].html" data-title="assess technology changes - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1302].png" alt="Assess Technology Changes - Context" loading="lazy">
+    <div class="cap">Assess Technology Changes - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-762].html" data-title="assign - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-762].png" alt="Assign - Context" loading="lazy">
+    <div class="cap">Assign - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-elem-id-proc-unconnected-assign-driver].html" data-title="assign driver - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-elem-id-proc-unconnected-assign-driver].png" alt="Assign Driver - Context" loading="lazy">
+    <div class="cap">Assign Driver - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2022].html" data-title="award contract - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2022].png" alt="Award Contract - Context" loading="lazy">
+    <div class="cap">Award Contract - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1772].html" data-title="balance supply &amp; demand - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1772].png" alt="Balance Supply &amp; Demand - Context" loading="lazy">
+    <div class="cap">Balance Supply &amp; Demand - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1012].html" data-title="benchmark supply chain - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1012].png" alt="Benchmark Supply Chain - Context" loading="lazy">
+    <div class="cap">Benchmark Supply Chain - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1932].html" data-title="calculate delivery plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1932].png" alt="Calculate Delivery Plan - Context" loading="lazy">
+    <div class="cap">Calculate Delivery Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1882].html" data-title="calculate production plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1882].png" alt="Calculate Production Plan - Context" loading="lazy">
+    <div class="cap">Calculate Production Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1832].html" data-title="calculate sourcing plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1832].png" alt="Calculate Sourcing Plan - Context" loading="lazy">
+    <div class="cap">Calculate Sourcing Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-822].html" data-title="close claim - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-822].png" alt="Close Claim - Context" loading="lazy">
+    <div class="cap">Close Claim - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-742].html" data-title="close inquiry - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-742].png" alt="Close Inquiry - Context" loading="lazy">
+    <div class="cap">Close Inquiry - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1422].html" data-title="collect budget data - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1422].png" alt="Collect Budget Data - Context" loading="lazy">
+    <div class="cap">Collect Budget Data - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1382].html" data-title="collect competency data - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1382].png" alt="Collect Competency Data - Context" loading="lazy">
+    <div class="cap">Collect Competency Data - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1212].html" data-title="collect process data - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1212].png" alt="Collect Process Data - Context" loading="lazy">
+    <div class="cap">Collect Process Data - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1002].html" data-title="collect supply chain data - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1002].png" alt="Collect Supply Chain Data - Context" loading="lazy">
+    <div class="cap">Collect Supply Chain Data - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1342].html" data-title="collect technology data - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1342].png" alt="Collect Technology Data - Context" loading="lazy">
+    <div class="cap">Collect Technology Data - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2512].html" data-title="complete order engineering - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2512].png" alt="Complete Order Engineering - Context" loading="lazy">
+    <div class="cap">Complete Order Engineering - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2102].html" data-title="create order - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2102].png" alt="Create Order - Context" loading="lazy">
+    <div class="cap">Create Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2202].html" data-title="create order - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2202].png" alt="Create Order - Context" loading="lazy">
+    <div class="cap">Create Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2422].html" data-title="create order - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2422].png" alt="Create Order - Context" loading="lazy">
+    <div class="cap">Create Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-32].html" data-title="create order - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-32].png" alt="Create Order - Context" loading="lazy">
+    <div class="cap">Create Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-492].html" data-title="create pricelist - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-492].png" alt="Create Pricelist - Context" loading="lazy">
+    <div class="cap">Create Pricelist - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-242].html" data-title="create project order - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-242].png" alt="Create Project Order - Context" loading="lazy">
+    <div class="cap">Create Project Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2502].html" data-title="create project order - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2502].png" alt="Create Project Order - Context" loading="lazy">
+    <div class="cap">Create Project Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2282].html" data-title="create return authorization - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2282].png" alt="Create Return Authorization - Context" loading="lazy">
+    <div class="cap">Create Return Authorization - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2032].html" data-title="create schedule - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2032].png" alt="Create Schedule - Context" loading="lazy">
+    <div class="cap">Create Schedule - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2112].html" data-title="create schedule - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2112].png" alt="Create Schedule - Context" loading="lazy">
+    <div class="cap">Create Schedule - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2352].html" data-title="create schedule - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2352].png" alt="Create Schedule - Context" loading="lazy">
+    <div class="cap">Create Schedule - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2592].html" data-title="create work order - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2592].png" alt="Create Work Order - Context" loading="lazy">
+    <div class="cap">Create Work Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1612].html" data-title="define context - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1612].png" alt="Define Context - Context" loading="lazy">
+    <div class="cap">Define Context - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1082].html" data-title="define network process flow - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1082].png" alt="Define Network Process Flow - Context" loading="lazy">
+    <div class="cap">Define Network Process Flow - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1142].html" data-title="define network solutions - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1142].png" alt="Define Network Solutions - Context" loading="lazy">
+    <div class="cap">Define Network Solutions - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1252].html" data-title="define process solutions - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1252].png" alt="Define Process Solutions - Context" loading="lazy">
+    <div class="cap">Define Process Solutions - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-992].html" data-title="define scorecard - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-992].png" alt="Define Scorecard - Context" loading="lazy">
+    <div class="cap">Define Scorecard - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1072].html" data-title="define supply chain network - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1072].png" alt="Define Supply Chain Network - Context" loading="lazy">
+    <div class="cap">Define Supply Chain Network - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-982].html" data-title="define supply chain network - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-982].png" alt="Define Supply Chain Network - Context" loading="lazy">
+    <div class="cap">Define Supply Chain Network - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1692].html" data-title="define supply chain priorities - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1692].png" alt="Define Supply Chain Priorities - Context" loading="lazy">
+    <div class="cap">Define Supply Chain Priorities - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1262].html" data-title="define to-be processes - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1262].png" alt="Define To-Be Processes - Context" loading="lazy">
+    <div class="cap">Define To-Be Processes - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1152].html" data-title="define to-be supply chain network - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1152].png" alt="Define To-Be Supply Chain Network - Context" loading="lazy">
+    <div class="cap">Define To-Be Supply Chain Network - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-782].html" data-title="determine action - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-782].png" alt="Determine Action - Context" loading="lazy">
+    <div class="cap">Determine Action - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1492].html" data-title="determine root causes - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1492].png" alt="Determine Root Causes - Context" loading="lazy">
+    <div class="cap">Determine Root Causes - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-232].html" data-title="develop &amp; present proposal - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-232].png" alt="Develop &amp; Present Proposal - Context" loading="lazy">
+    <div class="cap">Develop &amp; Present Proposal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-862].html" data-title="develop action plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-862].png" alt="Develop Action Plan - Context" loading="lazy">
+    <div class="cap">Develop Action Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1442].html" data-title="develop budget changes - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1442].png" alt="Develop Budget Changes - Context" loading="lazy">
+    <div class="cap">Develop Budget Changes - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1412].html" data-title="develop competency development plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1412].png" alt="Develop Competency Development Plan - Context" loading="lazy">
+    <div class="cap">Develop Competency Development Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1172].html" data-title="develop network change roadmap - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1172].png" alt="Develop Network Change Roadmap - Context" loading="lazy">
+    <div class="cap">Develop Network Change Roadmap - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1312].html" data-title="develop process change portfolio - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1312].png" alt="Develop Process Change Portfolio - Context" loading="lazy">
+    <div class="cap">Develop Process Change Portfolio - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-562].html" data-title="develop proposal - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-562].png" alt="Develop Proposal - Context" loading="lazy">
+    <div class="cap">Develop Proposal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-632].html" data-title="develop renewal - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-632].png" alt="Develop Renewal - Context" loading="lazy">
+    <div class="cap">Develop Renewal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1512].html" data-title="develop solution - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1512].png" alt="Develop Solution - Context" loading="lazy">
+    <div class="cap">Develop Solution - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-452].html" data-title="develop solution - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-452].png" alt="Develop Solution - Context" loading="lazy">
+    <div class="cap">Develop Solution - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1982].html" data-title="develop strategy - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1982].png" alt="Develop Strategy - Context" loading="lazy">
+    <div class="cap">Develop Strategy - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1782].html" data-title="develop supply chain plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1782].png" alt="Develop Supply Chain Plan - Context" loading="lazy">
+    <div class="cap">Develop Supply Chain Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1042].html" data-title="develop supply chain strategy - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1042].png" alt="Develop Supply Chain Strategy - Context" loading="lazy">
+    <div class="cap">Develop Supply Chain Strategy - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1372].html" data-title="develop technology architecture - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1372].png" alt="Develop Technology Architecture - Context" loading="lazy">
+    <div class="cap">Develop Technology Architecture - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-922].html" data-title="discover supply chains - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-922].png" alt="Discover Supply Chains - Context" loading="lazy">
+    <div class="cap">Discover Supply Chains - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2402].html" data-title="dispose - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2402].png" alt="Dispose - Context" loading="lazy">
+    <div class="cap">Dispose - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2482].html" data-title="dispose - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2482].png" alt="Dispose - Context" loading="lazy">
+    <div class="cap">Dispose - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2572].html" data-title="dispose - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2572].png" alt="Dispose - Context" loading="lazy">
+    <div class="cap">Dispose - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2672].html" data-title="dispose - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2672].png" alt="Dispose - Context" loading="lazy">
+    <div class="cap">Dispose - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-732].html" data-title="distribute solution - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-732].png" alt="Distribute Solution - Context" loading="lazy">
+    <div class="cap">Distribute Solution - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1202].html" data-title="document process flows - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1202].png" alt="Document Process Flows - Context" loading="lazy">
+    <div class="cap">Document Process Flows - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-902].html" data-title="end advisory - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-902].png" alt="End Advisory - Context" loading="lazy">
+    <div class="cap">End Advisory - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1562].html" data-title="evaluate applicability - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1562].png" alt="Evaluate Applicability - Context" loading="lazy">
+    <div class="cap">Evaluate Applicability - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1642].html" data-title="evaluate risks - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1642].png" alt="Evaluate Risks - Context" loading="lazy">
+    <div class="cap">Evaluate Risks - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2622].html" data-title="examine - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2622].png" alt="Examine - Context" loading="lazy">
+    <div class="cap">Examine - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1452].html" data-title="finalize resource plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1452].png" alt="Finalize Resource Plan - Context" loading="lazy">
+    <div class="cap">Finalize Resource Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1912].html" data-title="gather delivery demand - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1912].png" alt="Gather Delivery Demand - Context" loading="lazy">
+    <div class="cap">Gather Delivery Demand - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1862].html" data-title="gather demand for make - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1862].png" alt="Gather Demand for Make - Context" loading="lazy">
+    <div class="cap">Gather Demand for Make - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1742].html" data-title="gather demand forecast - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1742].png" alt="Gather Demand Forecast - Context" loading="lazy">
+    <div class="cap">Gather Demand Forecast - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1822].html" data-title="gather inventory &amp; schedule - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1822].png" alt="Gather Inventory &amp; Schedule - Context" loading="lazy">
+    <div class="cap">Gather Inventory &amp; Schedule - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1872].html" data-title="gather inventory &amp; schedule - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1872].png" alt="Gather Inventory &amp; Schedule - Context" loading="lazy">
+    <div class="cap">Gather Inventory &amp; Schedule - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1922].html" data-title="gather inventory &amp; supply - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1922].png" alt="Gather Inventory &amp; Supply - Context" loading="lazy">
+    <div class="cap">Gather Inventory &amp; Supply - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1812].html" data-title="gather sourcing demand - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1812].png" alt="Gather Sourcing Demand - Context" loading="lazy">
+    <div class="cap">Gather Sourcing Demand - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1762].html" data-title="gather supply (resources) - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1762].png" alt="Gather Supply (Resources) - Context" loading="lazy">
+    <div class="cap">Gather Supply (Resources) - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-842].html" data-title="identify advisory - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-842].png" alt="Identify Advisory - Context" loading="lazy">
+    <div class="cap">Identify Advisory - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1392].html" data-title="identify competency gaps - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1392].png" alt="Identify Competency Gaps - Context" loading="lazy">
+    <div class="cap">Identify Competency Gaps - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1962].html" data-title="identify requirements - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1962].png" alt="Identify Requirements - Context" loading="lazy">
+    <div class="cap">Identify Requirements - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1622].html" data-title="identify risks - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1622].png" alt="Identify Risks - Context" loading="lazy">
+    <div class="cap">Identify Risks - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-702].html" data-title="identify solution - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-702].png" alt="Identify Solution - Context" loading="lazy">
+    <div class="cap">Identify Solution - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1032].html" data-title="identify strategic supply chain capabilities - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1032].png" alt="Identify Strategic Supply Chain Capabilities - Context" loading="lazy">
+    <div class="cap">Identify Strategic Supply Chain Capabilities - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1992].html" data-title="identify supply sources - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1992].png" alt="Identify Supply Sources - Context" loading="lazy">
+    <div class="cap">Identify Supply Sources - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2182].html" data-title="identify supply sources - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2182].png" alt="Identify Supply Sources - Context" loading="lazy">
+    <div class="cap">Identify Supply Sources - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1702].html" data-title="identify sustainability gaps - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1702].png" alt="Identify Sustainability Gaps - Context" loading="lazy">
+    <div class="cap">Identify Sustainability Gaps - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1352].html" data-title="identify technology gaps - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1352].png" alt="Identify Technology Gaps - Context" loading="lazy">
+    <div class="cap">Identify Technology Gaps - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-802].html" data-title="implement action - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-802].png" alt="Implement Action - Context" loading="lazy">
+    <div class="cap">Implement Action - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-872].html" data-title="implement action plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-872].png" alt="Implement Action Plan - Context" loading="lazy">
+    <div class="cap">Implement Action Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-852].html" data-title="initiate advisory - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-852].png" alt="Initiate Advisory - Context" loading="lazy">
+    <div class="cap">Initiate Advisory - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-552].html" data-title="initiate proposal - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-552].png" alt="Initiate Proposal - Context" loading="lazy">
+    <div class="cap">Initiate Proposal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-412].html" data-title="initiate renewal - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-412].png" alt="Initiate Renewal - Context" loading="lazy">
+    <div class="cap">Initiate Renewal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-332].html" data-title="inquire - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-332].png" alt="Inquire - Context" loading="lazy">
+    <div class="cap">Inquire - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2062].html" data-title="inspect - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2062].png" alt="Inspect - Context" loading="lazy">
+    <div class="cap">Inspect - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2142].html" data-title="inspect - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2142].png" alt="Inspect - Context" loading="lazy">
+    <div class="cap">Inspect - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2232].html" data-title="inspect - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2232].png" alt="Inspect - Context" loading="lazy">
+    <div class="cap">Inspect - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2382].html" data-title="inspect - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2382].png" alt="Inspect - Context" loading="lazy">
+    <div class="cap">Inspect - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2462].html" data-title="inspect - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2462].png" alt="Inspect - Context" loading="lazy">
+    <div class="cap">Inspect - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2552].html" data-title="inspect - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2552].png" alt="Inspect - Context" loading="lazy">
+    <div class="cap">Inspect - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2652].html" data-title="inspect - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2652].png" alt="Inspect - Context" loading="lazy">
+    <div class="cap">Inspect - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2312].html" data-title="inspect, examine - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2312].png" alt="Inspect, Examine - Context" loading="lazy">
+    <div class="cap">Inspect, Examine - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-772].html" data-title="investigate - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-772].png" alt="Investigate - Context" loading="lazy">
+    <div class="cap">Investigate - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-162].html" data-title="invoice - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-162].png" alt="Invoice - Context" loading="lazy">
+    <div class="cap">Invoice - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-272].html" data-title="invoice - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-272].png" alt="Invoice - Context" loading="lazy">
+    <div class="cap">Invoice - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-62].html" data-title="invoice - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-62].png" alt="Invoice - Context" loading="lazy">
+    <div class="cap">Invoice - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2632].html" data-title="issue material - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2632].png" alt="Issue Material - Context" loading="lazy">
+    <div class="cap">Issue Material - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2442].html" data-title="issue materials - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2442].png" alt="Issue Materials - Context" loading="lazy">
+    <div class="cap">Issue Materials - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2612].html" data-title="issue product - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2612].png" alt="Issue Product - Context" loading="lazy">
+    <div class="cap">Issue Product - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2532].html" data-title="issue resources - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2532].png" alt="Issue Resources - Context" loading="lazy">
+    <div class="cap">Issue Resources - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2362].html" data-title="issue/stage materials - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2362].png" alt="Issue/Stage Materials - Context" loading="lazy">
+    <div class="cap">Issue/Stage Materials - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-102].html" data-title="load - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-102].png" alt="Load - Context" loading="lazy">
+    <div class="cap">Load - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-202].html" data-title="load - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-202].png" alt="Load - Context" loading="lazy">
+    <div class="cap">Load - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-312].html" data-title="load - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-312].png" alt="Load - Context" loading="lazy">
+    <div class="cap">Load - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-392].html" data-title="load - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-392].png" alt="Load - Context" loading="lazy">
+    <div class="cap">Load - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1582].html" data-title="manage and publish policies - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1582].png" alt="Manage and Publish Policies - Context" loading="lazy">
+    <div class="cap">Manage and Publish Policies - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1552].html" data-title="map policies to network - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1552].png" alt="Map Policies to Network - Context" loading="lazy">
+    <div class="cap">Map Policies to Network - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1592].html" data-title="monitor and audit - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1592].png" alt="Monitor and Audit - Context" loading="lazy">
+    <div class="cap">Monitor and Audit - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1722].html" data-title="monitor and evaluate - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1722].png" alt="Monitor and Evaluate - Context" loading="lazy">
+    <div class="cap">Monitor and Evaluate - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-892].html" data-title="monitor effectiveness - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-892].png" alt="Monitor Effectiveness - Context" loading="lazy">
+    <div class="cap">Monitor Effectiveness - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1522].html" data-title="monitor improvement program - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1522].png" alt="Monitor Improvement Program - Context" loading="lazy">
+    <div class="cap">Monitor Improvement Program - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1542].html" data-title="monitor regulatory agencies - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1542].png" alt="Monitor Regulatory Agencies - Context" loading="lazy">
+    <div class="cap">Monitor Regulatory Agencies - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1662].html" data-title="monitor risks - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1662].png" alt="Monitor Risks - Context" loading="lazy">
+    <div class="cap">Monitor Risks - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2192].html" data-title="negotiate &amp; award - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2192].png" alt="Negotiate &amp; Award - Context" loading="lazy">
+    <div class="cap">Negotiate &amp; Award - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2012].html" data-title="negotiate - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2012].png" alt="Negotiate - Context" loading="lazy">
+    <div class="cap">Negotiate - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-512].html" data-title="negotiate - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-512].png" alt="Negotiate - Context" loading="lazy">
+    <div class="cap">Negotiate - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-652].html" data-title="negotiate - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-652].png" alt="Negotiate - Context" loading="lazy">
+    <div class="cap">Negotiate - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-432].html" data-title="notify customer - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-432].png" alt="Notify Customer - Context" loading="lazy">
+    <div class="cap">Notify Customer - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-572].html" data-title="obtain approvals - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-572].png" alt="Obtain Approvals - Context" loading="lazy">
+    <div class="cap">Obtain Approvals - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-522].html" data-title="obtain signatures - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-522].png" alt="Obtain Signatures - Context" loading="lazy">
+    <div class="cap">Obtain Signatures - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-602].html" data-title="obtain signatures - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-602].png" alt="Obtain Signatures - Context" loading="lazy">
+    <div class="cap">Obtain Signatures - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-662].html" data-title="obtain signatures - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-662].png" alt="Obtain Signatures - Context" loading="lazy">
+    <div class="cap">Obtain Signatures - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-192].html" data-title="pack - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-192].png" alt="Pack - Context" loading="lazy">
+    <div class="cap">Pack - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-302].html" data-title="pack - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-302].png" alt="Pack - Context" loading="lazy">
+    <div class="cap">Pack - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-382].html" data-title="pack - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-382].png" alt="Pack - Context" loading="lazy">
+    <div class="cap">Pack - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-92].html" data-title="pack - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-92].png" alt="Pack - Context" loading="lazy">
+    <div class="cap">Pack - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2392].html" data-title="package - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2392].png" alt="Package - Context" loading="lazy">
+    <div class="cap">Package - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2472].html" data-title="package - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2472].png" alt="Package - Context" loading="lazy">
+    <div class="cap">Package - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2562].html" data-title="package - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2562].png" alt="Package - Context" loading="lazy">
+    <div class="cap">Package - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1022].html" data-title="perform metrics organizational analysis - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1022].png" alt="Perform Metrics Organizational Analysis - Context" loading="lazy">
+    <div class="cap">Perform Metrics Organizational Analysis - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1092].html" data-title="perform network organizational analysis - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1092].png" alt="Perform Network Organizational Analysis - Context" loading="lazy">
+    <div class="cap">Perform Network Organizational Analysis - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1222].html" data-title="perform process organizational analysis - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1222].png" alt="Perform Process Organizational Analysis - Context" loading="lazy">
+    <div class="cap">Perform Process Organizational Analysis - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-962].html" data-title="perform supply chain organizational analysis - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-962].png" alt="Perform Supply Chain Organizational Analysis - Context" loading="lazy">
+    <div class="cap">Perform Supply Chain Organizational Analysis - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1362].html" data-title="perform technology organizational analysis - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1362].png" alt="Perform Technology Organizational Analysis - Context" loading="lazy">
+    <div class="cap">Perform Technology Organizational Analysis - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-182].html" data-title="pick - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-182].png" alt="Pick - Context" loading="lazy">
+    <div class="cap">Pick - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-292].html" data-title="pick - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-292].png" alt="Pick - Context" loading="lazy">
+    <div class="cap">Pick - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-372].html" data-title="pick - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-372].png" alt="Pick - Context" loading="lazy">
+    <div class="cap">Pick - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-82].html" data-title="pick - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-82].png" alt="Pick - Context" loading="lazy">
+    <div class="cap">Pick - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-642].html" data-title="present renewal - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-642].png" alt="Present Renewal - Context" loading="lazy">
+    <div class="cap">Present Renewal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-462].html" data-title="present solution - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-462].png" alt="Present Solution - Context" loading="lazy">
+    <div class="cap">Present Solution - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-712].html" data-title="present solution - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-712].png" alt="Present Solution - Context" loading="lazy">
+    <div class="cap">Present Solution - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1132].html" data-title="prioritize network metrics - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1132].png" alt="Prioritize Network Metrics - Context" loading="lazy">
+    <div class="cap">Prioritize Network Metrics - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1502].html" data-title="prioritize root causes - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1502].png" alt="Prioritize Root Causes - Context" loading="lazy">
+    <div class="cap">Prioritize Root Causes - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-942].html" data-title="prioritize supply chains - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-942].png" alt="Prioritize Supply Chains - Context" loading="lazy">
+    <div class="cap">Prioritize Supply Chains - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-122].html" data-title="process inquiry - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-122].png" alt="Process Inquiry - Context" loading="lazy">
+    <div class="cap">Process Inquiry - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-22].html" data-title="process inquiry - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-22].png" alt="Process Inquiry - Context" loading="lazy">
+    <div class="cap">Process Inquiry - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2272].html" data-title="process return inquiry - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2272].png" alt="Process Return Inquiry - Context" loading="lazy">
+    <div class="cap">Process Return Inquiry - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2372].html" data-title="produce - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2372].png" alt="Produce - Context" loading="lazy">
+    <div class="cap">Produce - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2452].html" data-title="produce - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2452].png" alt="Produce - Context" loading="lazy">
+    <div class="cap">Produce - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2542].html" data-title="produce - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2542].png" alt="Produce - Context" loading="lazy">
+    <div class="cap">Produce - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-792].html" data-title="propose action - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-792].png" alt="Propose Action - Context" loading="lazy">
+    <div class="cap">Propose Action - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-882].html" data-title="publish advisory - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-882].png" alt="Publish Advisory - Context" loading="lazy">
+    <div class="cap">Publish Advisory - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1942].html" data-title="publish distribution plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1942].png" alt="Publish Distribution Plan - Context" loading="lazy">
+    <div class="cap">Publish Distribution Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1182].html" data-title="publish network change roadmap - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1182].png" alt="Publish Network Change Roadmap - Context" loading="lazy">
+    <div class="cap">Publish Network Change Roadmap - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-502].html" data-title="publish pricelist - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-502].png" alt="Publish Pricelist - Context" loading="lazy">
+    <div class="cap">Publish Pricelist - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1322].html" data-title="publish process change portfolio - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1322].png" alt="Publish Process Change Portfolio - Context" loading="lazy">
+    <div class="cap">Publish Process Change Portfolio - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1892].html" data-title="publish production plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1892].png" alt="Publish Production Plan - Context" loading="lazy">
+    <div class="cap">Publish Production Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1462].html" data-title="publish resource plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1462].png" alt="Publish Resource Plan - Context" loading="lazy">
+    <div class="cap">Publish Resource Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1842].html" data-title="publish sourcing plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1842].png" alt="Publish Sourcing Plan - Context" loading="lazy">
+    <div class="cap">Publish Sourcing Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1792].html" data-title="publish supply chain plan - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1792].png" alt="Publish Supply Chain Plan - Context" loading="lazy">
+    <div class="cap">Publish Supply Chain Plan - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1052].html" data-title="publish supply chain strategy - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1052].png" alt="Publish Supply Chain Strategy - Context" loading="lazy">
+    <div class="cap">Publish Supply Chain Strategy - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2072].html" data-title="put away - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2072].png" alt="Put Away - Context" loading="lazy">
+    <div class="cap">Put Away - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2152].html" data-title="put away - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2152].png" alt="Put Away - Context" loading="lazy">
+    <div class="cap">Put Away - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2242].html" data-title="put away - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2242].png" alt="Put Away - Context" loading="lazy">
+    <div class="cap">Put Away - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2322].html" data-title="put away - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2322].png" alt="Put Away - Context" loading="lazy">
+    <div class="cap">Put Away - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-72].html" data-title="put away - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-72].png" alt="Put Away - Context" loading="lazy">
+    <div class="cap">Put Away - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-172].html" data-title="receive &amp; stage - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-172].png" alt="Receive &amp; Stage - Context" loading="lazy">
+    <div class="cap">Receive &amp; Stage - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-282].html" data-title="receive &amp; stage - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-282].png" alt="Receive &amp; Stage - Context" loading="lazy">
+    <div class="cap">Receive &amp; Stage - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2042].html" data-title="receive - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2042].png" alt="Receive - Context" loading="lazy">
+    <div class="cap">Receive - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2122].html" data-title="receive - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2122].png" alt="Receive - Context" loading="lazy">
+    <div class="cap">Receive - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2212].html" data-title="receive - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2212].png" alt="Receive - Context" loading="lazy">
+    <div class="cap">Receive - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2292].html" data-title="receive - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2292].png" alt="Receive - Context" loading="lazy">
+    <div class="cap">Receive - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-752].html" data-title="receive claim - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-752].png" alt="Receive Claim - Context" loading="lazy">
+    <div class="cap">Receive Claim - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-682].html" data-title="receive inquiry - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-682].png" alt="Receive Inquiry - Context" loading="lazy">
+    <div class="cap">Receive Inquiry - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-482].html" data-title="receive request - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-482].png" alt="Receive Request - Context" loading="lazy">
+    <div class="cap">Receive Request - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-542].html" data-title="receive request - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-542].png" alt="Receive Request - Context" loading="lazy">
+    <div class="cap">Receive Request - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-622].html" data-title="receive request - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-622].png" alt="Receive Request - Context" loading="lazy">
+    <div class="cap">Receive Request - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-222].html" data-title="receive request for proposal - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-222].png" alt="Receive Request for Proposal - Context" loading="lazy">
+    <div class="cap">Receive Request for Proposal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-362].html" data-title="receive settlement - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-362].png" alt="Receive Settlement - Context" loading="lazy">
+    <div class="cap">Receive Settlement - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2642].html" data-title="recondition, repair, remake - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2642].png" alt="Recondition, Repair, Remake - Context" loading="lazy">
+    <div class="cap">Recondition, Repair, Remake - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-592].html" data-title="refine &amp; negotiate - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-592].png" alt="Refine &amp; Negotiate - Context" loading="lazy">
+    <div class="cap">Refine &amp; Negotiate - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-442].html" data-title="refresh customer needs - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-442].png" alt="Refresh Customer Needs - Context" loading="lazy">
+    <div class="cap">Refresh Customer Needs - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-532].html" data-title="release contract - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-532].png" alt="Release Contract - Context" loading="lazy">
+    <div class="cap">Release Contract - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-612].html" data-title="release contract - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-612].png" alt="Release Contract - Context" loading="lazy">
+    <div class="cap">Release Contract - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2662].html" data-title="repackage - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2662].png" alt="Repackage - Context" loading="lazy">
+    <div class="cap">Repackage - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1532].html" data-title="report and communicate - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1532].png" alt="Report and Communicate - Context" loading="lazy">
+    <div class="cap">Report and Communicate - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1602].html" data-title="report and communicate - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1602].png" alt="Report and Communicate - Context" loading="lazy">
+    <div class="cap">Report and Communicate - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1672].html" data-title="report and communicate - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1672].png" alt="Report and Communicate - Context" loading="lazy">
+    <div class="cap">Report and Communicate - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1732].html" data-title="report and communicate - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1732].png" alt="Report and Communicate - Context" loading="lazy">
+    <div class="cap">Report and Communicate - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-342].html" data-title="request return authorization - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-342].png" alt="Request Return Authorization - Context" loading="lazy">
+    <div class="cap">Request Return Authorization - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-42].html" data-title="reserve inventory - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-42].png" alt="Reserve Inventory - Context" loading="lazy">
+    <div class="cap">Reserve Inventory - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-472].html" data-title="review feedback - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-472].png" alt="Review Feedback - Context" loading="lazy">
+    <div class="cap">Review Feedback - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-142].html" data-title="route &amp; schedule order - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-142].png" alt="Route &amp; Schedule Order - Context" loading="lazy">
+    <div class="cap">Route &amp; Schedule Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-692].html" data-title="route inquiry - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-692].png" alt="Route Inquiry - Context" loading="lazy">
+    <div class="cap">Route Inquiry - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1472].html" data-title="run, validate &amp; distribute reports - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1472].png" alt="Run, Validate &amp; Distribute Reports - Context" loading="lazy">
+    <div class="cap">Run, Validate &amp; Distribute Reports - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-262].html" data-title="schedule delivery &amp; installation - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-262].png" alt="Schedule Delivery &amp; Installation - Context" loading="lazy">
+    <div class="cap">Schedule Delivery &amp; Installation - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2432].html" data-title="schedule make orders - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2432].png" alt="Schedule Make Orders - Context" loading="lazy">
+    <div class="cap">Schedule Make Orders - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-252].html" data-title="schedule project resources - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-252].png" alt="Schedule Project Resources - Context" loading="lazy">
+    <div class="cap">Schedule Project Resources - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-422].html" data-title="schedule renewal - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-422].png" alt="Schedule Renewal - Context" loading="lazy">
+    <div class="cap">Schedule Renewal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2522].html" data-title="schedule resources - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2522].png" alt="Schedule Resources - Context" loading="lazy">
+    <div class="cap">Schedule Resources - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-152].html" data-title="schedule transportation - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-152].png" alt="Schedule Transportation - Context" loading="lazy">
+    <div class="cap">Schedule Transportation - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-352].html" data-title="schedule transportation - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-352].png" alt="Schedule Transportation - Context" loading="lazy">
+    <div class="cap">Schedule Transportation - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-52].html" data-title="schedule transportation - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-52].png" alt="Schedule Transportation - Context" loading="lazy">
+    <div class="cap">Schedule Transportation - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2602].html" data-title="schedule work orders - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2602].png" alt="Schedule Work Orders - Context" loading="lazy">
+    <div class="cap">Schedule Work Orders - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-932].html" data-title="segment supply chains - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-932].png" alt="Segment Supply Chains - Context" loading="lazy">
+    <div class="cap">Segment Supply Chains - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-elem-id-proc-unconnected-select-carrier].html" data-title="select carrier - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-elem-id-proc-unconnected-select-carrier].png" alt="Select Carrier - Context" loading="lazy">
+    <div class="cap">Select Carrier - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-812].html" data-title="settle claim - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-812].png" alt="Settle Claim - Context" loading="lazy">
+    <div class="cap">Settle Claim - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2342].html" data-title="settle return - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2342].png" alt="Settle Return - Context" loading="lazy">
+    <div class="cap">Settle Return - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-112].html" data-title="ship - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-112].png" alt="Ship - Context" loading="lazy">
+    <div class="cap">Ship - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-212].html" data-title="ship - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-212].png" alt="Ship - Context" loading="lazy">
+    <div class="cap">Ship - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-322].html" data-title="ship - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-322].png" alt="Ship - Context" loading="lazy">
+    <div class="cap">Ship - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-402].html" data-title="ship - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-402].png" alt="Ship - Context" loading="lazy">
+    <div class="cap">Ship - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-elem-id-proc-unconnected-submit-documents].html" data-title="submit documents - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-elem-id-proc-unconnected-submit-documents].png" alt="Submit Documents - Context" loading="lazy">
+    <div class="cap">Submit Documents - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-582].html" data-title="submit proposal - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-582].png" alt="Submit Proposal - Context" loading="lazy">
+    <div class="cap">Submit Proposal - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2002].html" data-title="tender - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2002].png" alt="Tender - Context" loading="lazy">
+    <div class="cap">Tender - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-elem-id-proc-unconnected-tender-load].html" data-title="tender load - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-elem-id-proc-unconnected-tender-load].png" alt="Tender Load - Context" loading="lazy">
+    <div class="cap">Tender Load - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2082].html" data-title="transfer - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2082].png" alt="Transfer - Context" loading="lazy">
+    <div class="cap">Transfer - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2162].html" data-title="transfer - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2162].png" alt="Transfer - Context" loading="lazy">
+    <div class="cap">Transfer - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2252].html" data-title="transfer - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2252].png" alt="Transfer - Context" loading="lazy">
+    <div class="cap">Transfer - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2332].html" data-title="transfer - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2332].png" alt="Transfer - Context" loading="lazy">
+    <div class="cap">Transfer - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2412].html" data-title="transfer - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2412].png" alt="Transfer - Context" loading="lazy">
+    <div class="cap">Transfer - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2492].html" data-title="transfer - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2492].png" alt="Transfer - Context" loading="lazy">
+    <div class="cap">Transfer - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2582].html" data-title="transfer - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2582].png" alt="Transfer - Context" loading="lazy">
+    <div class="cap">Transfer - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2682].html" data-title="transfer - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2682].png" alt="Transfer - Context" loading="lazy">
+    <div class="cap">Transfer - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-722].html" data-title="transfer - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-722].png" alt="Transfer - Context" loading="lazy">
+    <div class="cap">Transfer - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1652].html" data-title="treat risks - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1652].png" alt="Treat Risks - Context" loading="lazy">
+    <div class="cap">Treat Risks - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1712].html" data-title="treat sustainability gaps - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1712].png" alt="Treat Sustainability Gaps - Context" loading="lazy">
+    <div class="cap">Treat Sustainability Gaps - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2052].html" data-title="unload - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2052].png" alt="Unload - Context" loading="lazy">
+    <div class="cap">Unload - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2132].html" data-title="unload - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2132].png" alt="Unload - Context" loading="lazy">
+    <div class="cap">Unload - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2222].html" data-title="unload - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2222].png" alt="Unload - Context" loading="lazy">
+    <div class="cap">Unload - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-2302].html" data-title="unload - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-2302].png" alt="Unload - Context" loading="lazy">
+    <div class="cap">Unload - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-672].html" data-title="update contract - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-672].png" alt="Update Contract - Context" loading="lazy">
+    <div class="cap">Update Contract - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-132].html" data-title="validate &amp; create order - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-132].png" alt="Validate &amp; Create Order - Context" loading="lazy">
+    <div class="cap">Validate &amp; Create Order - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1752].html" data-title="validate demand forecast - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1752].png" alt="Validate Demand Forecast - Context" loading="lazy">
+    <div class="cap">Validate Demand Forecast - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1162].html" data-title="validate to-be network design - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1162].png" alt="Validate To-Be Network Design - Context" loading="lazy">
+    <div class="cap">Validate To-Be Network Design - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-process_context-[oscm-id-1272].html" data-title="validate to-be processes - context" data-type="process_context">
+    <img class="thumb" src="../images/view-process_context-[oscm-id-1272].png" alt="Validate To-Be Processes - Context" loading="lazy">
+    <div class="cap">Validate To-Be Processes - Context</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-value_stream_context-[oscm-elem-id-vs-a2r].html" data-title="acquire-to-retire" data-type="value_stream_context">
+    <img class="thumb" src="../images/view-value_stream_context-[oscm-elem-id-vs-a2r].png" alt="Acquire-to-Retire" loading="lazy">
+    <div class="cap">Acquire-to-Retire</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-value_stream_context-[oscm-elem-id-vs-f2p].html" data-title="forecast-to-plan" data-type="value_stream_context">
+    <img class="thumb" src="../images/view-value_stream_context-[oscm-elem-id-vs-f2p].png" alt="Forecast-to-Plan" loading="lazy">
+    <div class="cap">Forecast-to-Plan</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-value_stream_context-[oscm-elem-id-vs-h2r].html" data-title="hire-to-retire" data-type="value_stream_context">
+    <img class="thumb" src="../images/view-value_stream_context-[oscm-elem-id-vs-h2r].png" alt="Hire-to-Retire" loading="lazy">
+    <div class="cap">Hire-to-Retire</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-value_stream_context-[oscm-elem-id-vs-i2o].html" data-title="inquiry-to-order" data-type="value_stream_context">
+    <img class="thumb" src="../images/view-value_stream_context-[oscm-elem-id-vs-i2o].png" alt="Inquiry-to-Order" loading="lazy">
+    <div class="cap">Inquiry-to-Order</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-value_stream_context-[oscm-elem-id-vs-o2c].html" data-title="order-to-cash" data-type="value_stream_context">
+    <img class="thumb" src="../images/view-value_stream_context-[oscm-elem-id-vs-o2c].png" alt="Order-to-Cash" loading="lazy">
+    <div class="cap">Order-to-Cash</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-value_stream_context-[oscm-elem-id-vs-p2m].html" data-title="plan-to-move" data-type="value_stream_context">
+    <img class="thumb" src="../images/view-value_stream_context-[oscm-elem-id-vs-p2m].png" alt="Plan-to-Move" loading="lazy">
+    <div class="cap">Plan-to-Move</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-value_stream_context-[oscm-elem-id-vs-p2p].html" data-title="procure-to-pay" data-type="value_stream_context">
+    <img class="thumb" src="../images/view-value_stream_context-[oscm-elem-id-vs-p2p].png" alt="Procure-to-Pay" loading="lazy">
+    <div class="cap">Procure-to-Pay</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-value_stream_context-[oscm-elem-id-vs-r2r].html" data-title="record-to-report" data-type="value_stream_context">
+    <img class="thumb" src="../images/view-value_stream_context-[oscm-elem-id-vs-r2r].png" alt="Record-to-Report" loading="lazy">
+    <div class="cap">Record-to-Report</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-value_stream_context-[oscm-elem-id-vs-s2p].html" data-title="source-to-pay" data-type="value_stream_context">
+    <img class="thumb" src="../images/view-value_stream_context-[oscm-elem-id-vs-s2p].png" alt="Source-to-Pay" loading="lazy">
+    <div class="cap">Source-to-Pay</div>
+  </a>
+  <a class="tile" target="view" href="../views/view-metrics_catalogue-[OSCM].html" data-title="metrics catalogue" data-type="metrics_catalogue">
+    <img class="thumb" src="../images/view-metrics_catalogue-[OSCM].png" alt="Metrics Catalogue" loading="lazy">
+    <div class="cap">Metrics Catalogue</div>
+  </a>
+</div>
+</main>
+<script>
+(function() {
+  var MODEL = "model-OSCM";
+  var sel = document.getElementById('type-filter');
+  var box = document.getElementById('search-box');
+  var cnt = document.getElementById('search-count') || document.getElementById('fbar-count');
+  var clr = document.getElementById('fbar-clear');
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('a.tile'));
+  var grids = Array.prototype.slice.call(document.querySelectorAll('div.grid'));
+  var KT = 'lightbox.type.' + MODEL, KN = 'lightbox.name.' + MODEL;
+  function get(k) { try { return window.sessionStorage.getItem(k); } catch (e) { return null; } }
+  function put(k, v) { try { window.sessionStorage.setItem(k, v); } catch (e) {} }
+  function apply(save) {
+    var q = box ? box.value.trim().toLowerCase() : '';
+    var t = sel ? sel.value : '';
+    var shown = 0;
+    tiles.forEach(function(el) {
+      var ok = (!q || (el.dataset.title || '').indexOf(q) !== -1) && (!t || el.dataset.type === t);
+      el.classList.toggle('hidden', !ok);
+      if (ok) shown++;
+    });
+    grids.forEach(function(g) {
+      var vis = g.querySelector('a.tile:not(.hidden)');
+      g.classList.toggle('hidden', !vis);
+      var h = g.previousElementSibling;
+      if (h && h.tagName === 'H2') h.classList.toggle('hidden', !vis);
+    });
+    if (cnt) cnt.textContent = shown + ' of ' + tiles.length + ' diagrams';
+    if (save) { put(KT, t); if (box) put(KN, box.value); }
+  }
+  if (sel) {
+    var v = get(KT);
+    if (v) { for (var i = 0; i < sel.options.length; i++) { if (sel.options[i].value === v) { sel.value = v; break; } } }
+    sel.addEventListener('change', function() { apply(true); });
+  }
+  if (box) {
+    var n = get(KN);
+    if (n !== null) box.value = n;
+    box.addEventListener('input', function() { apply(true); });
+  }
+  if (clr) clr.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (sel) sel.value = '';
+    if (box) box.value = '';
+    apply(true);
+  });
+  apply(false);
+  if (box) box.focus();
+})();
+</script>
+<script>
+(function() {
+  var r = document.getElementById('lb-sizeRange');
+  if (!r) return;
+  var K = 'lightbox.tile';
+  function set(v, save) {
+    v = Math.max(+r.min, Math.min(+r.max, +v));
+    r.value = v;
+    document.documentElement.style.setProperty('--tile', v + 'px');
+    if (save) { try { window.localStorage.setItem(K, v); } catch (e) {} }
+  }
+  var saved = null;
+  try { saved = window.localStorage.getItem(K); } catch (e) {}
+  set(saved || r.value, false);
+  r.addEventListener('input', function() { set(r.value, true); });
+  document.getElementById('lb-sizeDown').addEventListener('click', function() { set(+r.value - 40, true); });
+  document.getElementById('lb-sizeUp').addEventListener('click', function() { set(+r.value + 40, true); });
+})();
+</script>
+</body>
+</html>

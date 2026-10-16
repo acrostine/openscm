@@ -1,0 +1,23 @@
+source \ target,Align Network,Align Processes,Align Resources,Align Strategy,Assist with Advisory,Assist with Claim,Assist with Custom Solution,Assist with Inquiry,Contract Custom Solution,Contract Renewal,Contract Standard Terms,Contract by Proposal,Manage Compliance,Manage Performance,Manage Supply Chain Risk,Manage Sustainability,Sell Custom Solution,Sell Renewal,Sell by Proposal,Sell on Standard Terms,Tax Accounting,OUT (row sum)
+Align Network,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Align Processes,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Align Resources,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Align Strategy,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Assist with Advisory,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1
+Assist with Claim,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Assist with Custom Solution,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Assist with Inquiry,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
+Contract Custom Solution,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Contract Renewal,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,2
+Contract Standard Terms,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1
+Contract by Proposal,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,2
+Manage Compliance,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Manage Performance,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Manage Supply Chain Risk,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Manage Sustainability,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sell Custom Solution,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+Sell Renewal,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sell by Proposal,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1
+Sell on Standard Terms,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,2
+Tax Accounting,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+IN (col sum),0,0,0,0,0,0,1,0,0,1,0,1,0,0,1,0,2,2,2,1,1,12

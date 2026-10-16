@@ -1,0 +1,29 @@
+source \ target,Adaptability,"Approvals, Decisions & Solutions",Asset Efficiency,Business Objects,Commercial Documents,Cost,D Deliver,Dependability,E Enable,Generic Signals / Data,Inventory & Materials,Key Risk,Logistics & Shipping Documents,M Make,Metrics,P Plan,Performance & Risk Artifacts,Planning & Forecasting Artifacts,Profitability,Reference & Master Data,Requests & Inquiries,Responsiveness,Returns & Claims,S Source,Strategy & Network Design,Sustainability,Value Streams,OUT (row sum)
+Adaptability,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Approvals, Decisions & Solutions",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Asset Efficiency,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Business Objects,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Commercial Documents,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cost,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+D Deliver,0,0,0,0,0,0,6,0,11,0,0,0,0,3,0,3,0,0,0,0,0,0,0,0,0,0,0,23
+Dependability,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+E Enable,0,0,0,0,0,0,4,0,12,0,0,0,0,2,0,2,0,0,0,0,0,0,0,1,0,0,0,21
+Generic Signals / Data,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Inventory & Materials,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Key Risk,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Logistics & Shipping Documents,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+M Make,0,0,0,0,0,0,1,0,2,0,0,0,0,9,0,1,0,0,0,0,0,0,0,0,0,0,0,13
+Metrics,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+P Plan,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1
+Performance & Risk Artifacts,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Planning & Forecasting Artifacts,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Profitability,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Reference & Master Data,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Requests & Inquiries,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Responsiveness,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Returns & Claims,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+S Source,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Strategy & Network Design,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sustainability,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Value Streams,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+IN (col sum),0,0,0,0,0,0,11,0,26,0,0,0,0,14,0,7,0,0,0,0,0,0,0,1,0,0,0,59

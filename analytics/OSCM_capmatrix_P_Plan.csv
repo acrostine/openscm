@@ -1,0 +1,9 @@
+source \ target,Plan Budgets,Plan Deliver,Plan Finance,Plan Financial Forecast,Plan Make,Plan Source,Plan Supply Chain Operations,OUT (row sum)
+Plan Budgets,0,0,0,0,0,0,0,0
+Plan Deliver,0,0,0,0,0,0,0,0
+Plan Finance,0,0,0,0,1,0,0,1
+Plan Financial Forecast,0,0,0,0,0,0,0,0
+Plan Make,0,0,0,0,0,0,0,0
+Plan Source,0,0,0,0,0,0,0,0
+Plan Supply Chain Operations,0,0,0,0,0,0,0,0
+IN (col sum),0,0,0,0,1,0,0,1

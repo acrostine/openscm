@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Days of Inventory (AE12)</title>
+
+	<!-- JQUERY -->
+	<script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.4.1.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+	<!-- MARKDOWN -->
+	<script type="text/javascript" src="../../lib/marked/marked.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Days of Inventory (AE12)</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-elementtype-Assessment"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-Assessment" target="hint"></a>
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+                    <!-- Analysis -->
+                    	<li role="presentation"><a href="#analysis" aria-controls="analysis" role="tab" data-toggle="tab" class="i18n-analysis"></a></li>
+
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="markdown-doc"><script type="text/plain">**Time inventory is held.** This metric measures the average number of days goods remain in inventory before being sold or used. In the Open Supply Chain Model, supply chain and finance teams use it to manage stock levels and cash tied up in inventory. It is influenced by planning processes including Plan Finance, Plan Supply Chain Operations, Plan Budgets, Plan Source, Plan Make, Plan Deliver, Plan Financial Forecast, Calculate Delivery Plan, Negotiate, Sell on Standard Terms, Source-to-Replenish, and Sell by Proposal. This metric supports decisions on inventory targets, production scheduling, and supplier lead times. It is part of the Cash Conversion Cycle group, alongside Days Receivables Outstanding and Days Payables Outstanding.</script></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="analysis">
+						<table class="table table-striped table-hover table-condensed" id="used-in-views">
+							<thead>
+								<tr><th colspan="2" class="i18n-used-in-views" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-viewpoint"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="used-in-views-view-process_context-[oscm-id-2582]">
+																	<td><a href="../views/view-process_context-[oscm-id-2582].html" target="view" title="Transfer - Context"> Transfer - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-821]">
+																	<td><a href="../views/view-capability_context-[oscm-id-821].html" target="view" title="Deliver-From-Stock - Context"> Deliver-From-Stock - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-791]">
+																	<td><a href="../views/view-capability_context-[oscm-id-791].html" target="view" title="Make-to-Order - Context"> Make-to-Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2532]">
+																	<td><a href="../views/view-process_context-[oscm-id-2532].html" target="view" title="Issue Resources - Context"> Issue Resources - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-751]">
+																	<td><a href="../views/view-capability_context-[oscm-id-751].html" target="view" title="Source-to-Order - Context"> Source-to-Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1932]">
+																	<td><a href="../views/view-process_context-[oscm-id-1932].html" target="view" title="Calculate Delivery Plan - Context"> Calculate Delivery Plan - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-metrics_catalogue-[OSCM]">
+																	<td><a href="../views/view-metrics_catalogue-[OSCM].html" target="view" title="Metrics Catalogue"> Metrics Catalogue </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2542]">
+																	<td><a href="../views/view-process_context-[oscm-id-2542].html" target="view" title="Produce - Context"> Produce - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-501]">
+																	<td><a href="../views/view-capability_context-[oscm-id-501].html" target="view" title="Sell by Proposal - Context"> Sell by Proposal - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2442]">
+																	<td><a href="../views/view-process_context-[oscm-id-2442].html" target="view" title="Issue Materials - Context"> Issue Materials - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-421]">
+																	<td><a href="../views/view-capability_context-[oscm-id-421].html" target="view" title="Deliver-to-Order - Context"> Deliver-to-Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-511]">
+																	<td><a href="../views/view-capability_context-[oscm-id-511].html" target="view" title="Sell Custom Solution - Context"> Sell Custom Solution - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-451]">
+																	<td><a href="../views/view-capability_context-[oscm-id-451].html" target="view" title="Plan Finance - Context"> Plan Finance - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-431]">
+																	<td><a href="../views/view-capability_context-[oscm-id-431].html" target="view" title="Deliver-To-Engineering-Order - Context"> Deliver-To-Engineering-Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2552]">
+																	<td><a href="../views/view-process_context-[oscm-id-2552].html" target="view" title="Inspect - Context"> Inspect - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2432]">
+																	<td><a href="../views/view-process_context-[oscm-id-2432].html" target="view" title="Schedule Make Orders - Context"> Schedule Make Orders - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-801]">
+																	<td><a href="../views/view-capability_context-[oscm-id-801].html" target="view" title="Make-To-Engineering-Order - Context"> Make-To-Engineering-Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2682]">
+																	<td><a href="../views/view-process_context-[oscm-id-2682].html" target="view" title="Transfer - Context"> Transfer - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-491]">
+																	<td><a href="../views/view-capability_context-[oscm-id-491].html" target="view" title="Sell on Standard Terms - Context"> Sell on Standard Terms - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2582]">
+																	<td><a href="../views/view-process_context-[oscm-id-2582].html" target="view" title="Transfer - Context"> Transfer - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2382]">
+																	<td><a href="../views/view-process_context-[oscm-id-2382].html" target="view" title="Inspect - Context"> Inspect - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-711]">
+																	<td><a href="../views/view-capability_context-[oscm-id-711].html" target="view" title="Plan Make - Context"> Plan Make - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-811]">
+																	<td><a href="../views/view-capability_context-[oscm-id-811].html" target="view" title="Re-Make - Context"> Re-Make - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-721]">
+																	<td><a href="../views/view-capability_context-[oscm-id-721].html" target="view" title="Plan Deliver - Context"> Plan Deliver - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-471]">
+																	<td><a href="../views/view-capability_context-[oscm-id-471].html" target="view" title="Plan Financial Forecast - Context"> Plan Financial Forecast - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-441]">
+																	<td><a href="../views/view-capability_context-[oscm-id-441].html" target="view" title="Deliver Returns - Context"> Deliver Returns - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-691]">
+																	<td><a href="../views/view-capability_context-[oscm-id-691].html" target="view" title="Plan Supply Chain Operations - Context"> Plan Supply Chain Operations - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-741]">
+																	<td><a href="../views/view-capability_context-[oscm-id-741].html" target="view" title="Source-to-Replenish - Context"> Source-to-Replenish - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-781]">
+																	<td><a href="../views/view-capability_context-[oscm-id-781].html" target="view" title="Make-to-Stock - Context"> Make-to-Stock - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1932]">
+																	<td><a href="../views/view-process_context-[oscm-id-1932].html" target="view" title="Calculate Delivery Plan - Context"> Calculate Delivery Plan - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-461]">
+																	<td><a href="../views/view-capability_context-[oscm-id-461].html" target="view" title="Plan Budgets - Context"> Plan Budgets - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-701]">
+																	<td><a href="../views/view-capability_context-[oscm-id-701].html" target="view" title="Plan Source - Context"> Plan Source - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-761]">
+																	<td><a href="../views/view-capability_context-[oscm-id-761].html" target="view" title="Source-to-Engineering-Order - Context"> Source-to-Engineering-Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2012]">
+																	<td><a href="../views/view-process_context-[oscm-id-2012].html" target="view" title="Negotiate - Context"> Negotiate - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2452]">
+																	<td><a href="../views/view-process_context-[oscm-id-2452].html" target="view" title="Produce - Context"> Produce - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2542]">
+																	<td><a href="../views/view-process_context-[oscm-id-2542].html" target="view" title="Produce - Context"> Produce - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2452]">
+																	<td><a href="../views/view-process_context-[oscm-id-2452].html" target="view" title="Produce - Context"> Produce - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2522]">
+																	<td><a href="../views/view-process_context-[oscm-id-2522].html" target="view" title="Schedule Resources - Context"> Schedule Resources - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2652]">
+																	<td><a href="../views/view-process_context-[oscm-id-2652].html" target="view" title="Inspect - Context"> Inspect - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2352]">
+																	<td><a href="../views/view-process_context-[oscm-id-2352].html" target="view" title="Create Schedule - Context"> Create Schedule - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2462]">
+																	<td><a href="../views/view-process_context-[oscm-id-2462].html" target="view" title="Inspect - Context"> Inspect - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr>
+							</tbody>
+						</table>
+						<table class="table table-striped table-hover table-condensed" id="model-relations">
+							<thead>
+								<tr><th colspan="4" class="i18n-model-relations" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-type"></th>
+									<th class="i18n-source"></th>
+									<th class="i18n-target"></th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+											<td><a href="../elements/oscm-elem-id-comp-metric-ae121.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-CompositionRelationship" /></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae121.html" target="element"> Days of Raw Materials Inventory (AE121)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-comp-metric-ae122.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-CompositionRelationship" /></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae122.html" target="element"> Days of WIP Inventory (AE122)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-comp-metric-ae123.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-CompositionRelationship" /></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae123.html" target="element"> Days of Finished Goods Inventory (AE123)</a></td>
+										</tr>
+									<tr>
+											<td><a href="../elements/oscm-elem-id-comp-metric-ae12.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-CompositionRelationship" /></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae1.html" target="element"> Cash Conversion Cycle (AE1)</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-34.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-451.html" target="element"> Plan Finance</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-35.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-691.html" target="element"> Plan Supply Chain Operations</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-36.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-461.html" target="element"> Plan Budgets</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-37.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-38.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-39.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-721.html" target="element"> Plan Deliver</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-40.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-471.html" target="element"> Plan Financial Forecast</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-41.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-1932.html" target="element"> Calculate Delivery Plan</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-42.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-2012.html" target="element"> Negotiate</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-43.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-491.html" target="element"> Sell on Standard Terms</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-44.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-741.html" target="element"> Source-to-Replenish</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-45.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-501.html" target="element"> Sell by Proposal</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-46.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-751.html" target="element"> Source-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-47.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-511.html" target="element"> Sell Custom Solution</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-48.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-761.html" target="element"> Source-to-Engineering-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-49.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-781.html" target="element"> Make-to-Stock</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-50.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-791.html" target="element"> Make-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-51.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-2452.html" target="element"> Produce</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-52.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-801.html" target="element"> Make-To-Engineering-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-53.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-2542.html" target="element"> Produce</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-54.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-2582.html" target="element"> Transfer</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-55.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-811.html" target="element"> Re-Make</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-56.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-2682.html" target="element"> Transfer</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-57.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-821.html" target="element"> Deliver-From-Stock</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-58.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-59.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-431.html" target="element"> Deliver-To-Engineering-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-60.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-441.html" target="element"> Deliver Returns</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr>
+							</tbody>
+						</table>
+					</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

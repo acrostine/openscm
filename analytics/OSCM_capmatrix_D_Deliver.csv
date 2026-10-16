@@ -1,0 +1,6 @@
+source \ target,Deliver Returns,Deliver-From-Stock,Deliver-To-Engineering-Order,Deliver-to-Order,OUT (row sum)
+Deliver Returns,0,0,0,0,0
+Deliver-From-Stock,1,0,1,1,3
+Deliver-To-Engineering-Order,1,1,0,1,3
+Deliver-to-Order,0,0,0,0,0
+IN (col sum),2,1,1,2,6

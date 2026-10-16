@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Deliver-to-Order</title>
+
+	<!-- JQUERY -->
+	<script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.4.1.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+	<!-- MARKDOWN -->
+	<script type="text/javascript" src="../../lib/marked/marked.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Deliver-to-Order</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-elementtype-Capability"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-Capability" target="hint"></a>
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+                    <!-- Analysis -->
+                    	<li role="presentation"><a href="#analysis" aria-controls="analysis" role="tab" data-toggle="tab" class="i18n-analysis"></a></li>
+
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="markdown-doc"><script type="text/plain">**A Customer Order arrives with no finished stock.** The goods are not sitting in a warehouse; they will be produced, assembled, or procured after the order is accepted. Deliver-to-Order owns the delivery segment from that acceptance to the pickup or shipping of the finished items. Its job is to meet the Requested Delivery Date by coordinating the release of each item as soon as it becomes available. When it works, customers receive complete orders on time, and the organisation avoids expediting costs.
+
+**Production Schedule drives the delivery date.** The capability consumes Customer Orders and a Production Schedule. The Production Schedule says when each ordered item will be completed and available for pickup or shipping. The team reads that schedule, monitors production completion events, and only initiates a Shipping Request when goods pass quality inspection. If a production completion is delayed or advanced, the Production Schedule must be updated; a stale schedule is re-validated before any Shipping Plan is issued.
+
+**Shipping Plan sets the movement.** A Shipping Plan is issued per Customer Order and determines the transportation mode, loading date, and delivery sequence based on the Production Schedule. It aligns with the customer's Requested Delivery Date. When a production completion is delayed, the Shipping Plan is rescheduled and the customer is informed of the revised delivery date. A Shipment is then issued when the goods are handed to a carrier, and a Shipment Notification goes out on departure.</script></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>level</td><td class="convertlinks no-margin" style="white-space:pre-wrap">2</td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="analysis">
+						<table class="table table-striped table-hover table-condensed" id="used-in-views">
+							<thead>
+								<tr><th colspan="2" class="i18n-used-in-views" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-viewpoint"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="used-in-views-view-process_context-[oscm-id-2222]">
+																	<td><a href="../views/view-process_context-[oscm-id-2222].html" target="view" title="Unload - Context"> Unload - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-elem-id-proc-unconnected-tender-load]">
+																	<td><a href="../views/view-process_context-[oscm-elem-id-proc-unconnected-tender-load].html" target="view" title="Tender Load - Context"> Tender Load - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-122]">
+																	<td><a href="../views/view-process_context-[oscm-id-122].html" target="view" title="Process Inquiry - Context"> Process Inquiry - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-521]">
+																	<td><a href="../views/view-capability_context-[oscm-id-521].html" target="view" title="Sell Renewal - Context"> Sell Renewal - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-292]">
+																	<td><a href="../views/view-process_context-[oscm-id-292].html" target="view" title="Pick - Context"> Pick - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-142]">
+																	<td><a href="../views/view-process_context-[oscm-id-142].html" target="view" title="Route &amp; Schedule Order - Context"> Route &amp; Schedule Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_processes-[oscm-id-grp-deliver]">
+																	<td><a href="../views/view-domain_processes-[oscm-id-grp-deliver].html" target="view" title="D Deliver - Processes"> D Deliver - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-elem-id-proc-unconnected-submit-documents]">
+																	<td><a href="../views/view-process_context-[oscm-elem-id-proc-unconnected-submit-documents].html" target="view" title="Submit Documents - Context"> Submit Documents - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-421]">
+																	<td><a href="../views/view-capability_context-[oscm-id-421].html" target="view" title="Deliver-to-Order - Context"> Deliver-to-Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-491]">
+																	<td><a href="../views/view-capability_context-[oscm-id-491].html" target="view" title="Sell on Standard Terms - Context"> Sell on Standard Terms - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-312]">
+																	<td><a href="../views/view-process_context-[oscm-id-312].html" target="view" title="Load - Context"> Load - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-421]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-421].html" target="view" title="Deliver-to-Order - Processes"> Deliver-to-Order - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-192]">
+																	<td><a href="../views/view-process_context-[oscm-id-192].html" target="view" title="Pack - Context"> Pack - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-322]">
+																	<td><a href="../views/view-process_context-[oscm-id-322].html" target="view" title="Ship - Context"> Ship - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-742]">
+																	<td><a href="../views/view-process_context-[oscm-id-742].html" target="view" title="Close Inquiry - Context"> Close Inquiry - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-162]">
+																	<td><a href="../views/view-process_context-[oscm-id-162].html" target="view" title="Invoice - Context"> Invoice - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-511]">
+																	<td><a href="../views/view-capability_context-[oscm-id-511].html" target="view" title="Sell Custom Solution - Context"> Sell Custom Solution - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-processes_overview-[OSCM]">
+																	<td><a href="../views/view-processes_overview-[OSCM].html" target="view" title="Processes Overview"> Processes Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-491]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-491].html" target="view" title="Sell on Standard Terms - Processes"> Sell on Standard Terms - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-32]">
+																	<td><a href="../views/view-process_context-[oscm-id-32].html" target="view" title="Create Order - Context"> Create Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-521]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-521].html" target="view" title="Sell Renewal - Processes"> Sell Renewal - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-431]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-431].html" target="view" title="Deliver-To-Engineering-Order - Processes"> Deliver-To-Engineering-Order - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-202]">
+																	<td><a href="../views/view-process_context-[oscm-id-202].html" target="view" title="Load - Context"> Load - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_capabilities-[oscm-id-grp-deliver]">
+																	<td><a href="../views/view-domain_capabilities-[oscm-id-grp-deliver].html" target="view" title="D Deliver - Capabilities"> D Deliver - Capabilities </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-821]">
+																	<td><a href="../views/view-capability_context-[oscm-id-821].html" target="view" title="Deliver-From-Stock - Context"> Deliver-From-Stock - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-571]">
+																	<td><a href="../views/view-capability_context-[oscm-id-571].html" target="view" title="Assist with Inquiry - Context"> Assist with Inquiry - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-511]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-511].html" target="view" title="Sell Custom Solution - Processes"> Sell Custom Solution - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2242]">
+																	<td><a href="../views/view-process_context-[oscm-id-2242].html" target="view" title="Put Away - Context"> Put Away - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-82]">
+																	<td><a href="../views/view-process_context-[oscm-id-82].html" target="view" title="Pick - Context"> Pick - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-172]">
+																	<td><a href="../views/view-process_context-[oscm-id-172].html" target="view" title="Receive &amp; Stage - Context"> Receive &amp; Stage - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_capabilities-[oscm-id-grp-enable]">
+																	<td><a href="../views/view-domain_capabilities-[oscm-id-grp-enable].html" target="view" title="E Enable - Capabilities"> E Enable - Capabilities </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-42]">
+																	<td><a href="../views/view-process_context-[oscm-id-42].html" target="view" title="Reserve Inventory - Context"> Reserve Inventory - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-152]">
+																	<td><a href="../views/view-process_context-[oscm-id-152].html" target="view" title="Schedule Transportation - Context"> Schedule Transportation - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-home-[OSCM]">
+																	<td><a href="../views/view-home-[OSCM].html" target="view" title="Home"> Home </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-212]">
+																	<td><a href="../views/view-process_context-[oscm-id-212].html" target="view" title="Ship - Context"> Ship - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2032]">
+																	<td><a href="../views/view-process_context-[oscm-id-2032].html" target="view" title="Create Schedule - Context"> Create Schedule - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-132]">
+																	<td><a href="../views/view-process_context-[oscm-id-132].html" target="view" title="Validate &amp; Create Order - Context"> Validate &amp; Create Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-182]">
+																	<td><a href="../views/view-process_context-[oscm-id-182].html" target="view" title="Pick - Context"> Pick - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-571]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-571].html" target="view" title="Assist with Inquiry - Processes"> Assist with Inquiry - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_processes-[oscm-id-grp-enable]">
+																	<td><a href="../views/view-domain_processes-[oscm-id-grp-enable].html" target="view" title="E Enable - Processes"> E Enable - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2092]">
+																	<td><a href="../views/view-process_context-[oscm-id-2092].html" target="view" title="Approve Payment - Context"> Approve Payment - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2202]">
+																	<td><a href="../views/view-process_context-[oscm-id-2202].html" target="view" title="Create Order - Context"> Create Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-elements_map-[OSCM]">
+																	<td><a href="../views/view-elements_map-[OSCM].html" target="view" title="Elements Map"> Elements Map </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-value_stream_context-[oscm-elem-id-vs-o2c]">
+																	<td><a href="../views/view-value_stream_context-[oscm-elem-id-vs-o2c].html" target="view" title="Order-to-Cash"> Order-to-Cash </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capabilities_overview-[OSCM]">
+																	<td><a href="../views/view-capabilities_overview-[OSCM].html" target="view" title="Capabilities Overview"> Capabilities Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-92]">
+																	<td><a href="../views/view-process_context-[oscm-id-92].html" target="view" title="Pack - Context"> Pack - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-821]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-821].html" target="view" title="Deliver-From-Stock - Processes"> Deliver-From-Stock - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-431]">
+																	<td><a href="../views/view-capability_context-[oscm-id-431].html" target="view" title="Deliver-To-Engineering-Order - Context"> Deliver-To-Engineering-Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2322]">
+																	<td><a href="../views/view-process_context-[oscm-id-2322].html" target="view" title="Put Away - Context"> Put Away - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr>
+							</tbody>
+						</table>
+						<table class="table table-striped table-hover table-condensed" id="model-relations">
+							<thead>
+								<tr><th colspan="4" class="i18n-model-relations" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-type"></th>
+									<th class="i18n-source"></th>
+									<th class="i18n-target"></th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+											<td><a href="../elements/oscm-elem-id-acc-14.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-acknowledgment.html" target="element"> Acknowledgment</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-140.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-contract.html" target="element"> Contract</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-180.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-delivery-schedule.html" target="element"> Delivery Schedule</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-343.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-invoice.html" target="element"> Invoice</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-36.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-advance-shipment-notice.html" target="element"> Advance Shipment Notice</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-452.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-purchase-order.html" target="element"> Purchase Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-463.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-proof-of-delivery.html" target="element"> Proof of Delivery</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-632.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-repaired-product.html" target="element"> Repaired Product</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-842.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-order-confirmation.html" target="element"> Order Confirmation</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-863.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-sales-order-stock.html" target="element"> Sales Order Stock</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-946.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-shipment.html" target="element"> Shipment</a></td>
+										</tr><tr>
+											<td><a href="../elements/id-4459e169-1037-4ec8-87d0-d537752e377d.html" target="element" title="Inquiry Response">Inquiry Response</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-id-571.html" target="element"> Assist with Inquiry</a></td>
+										</tr><tr>
+											<td><a href="../elements/id-c608d23a-2051-4e5f-a9cf-91b974cc172c.html" target="element" title="Shipment Notification">Shipment Notification</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-id-511.html" target="element"> Sell Custom Solution</a></td>
+										</tr><tr>
+											<td><a href="../elements/id-febb0a87-5ea8-4957-a1d5-5af25596e1e3.html" target="element" title="Invoice">Invoice</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-id-491.html" target="element"> Sell on Standard Terms</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-124.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-co1.html" target="element"> Supply Chain Costs (CO1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-218.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-co12.html" target="element"> Distribution Costs (CO12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-26.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae1.html" target="element"> Cash Conversion Cycle (AE1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-280.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp1.html" target="element"> Perfect Order Ratio (DP1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-300.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp11.html" target="element"> Orders Damage Free Ratio (DP11)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-31.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae11.html" target="element"> Days Receivables Outstanding (AE11)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-360.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp13.html" target="element"> Orders On-time Ratio (DP13)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-383.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp14.html" target="element"> Orders In-full Ratio (DP14)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-398.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp15.html" target="element"> Error-free Documentation Ratio (DP15)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-425.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-rs1.html" target="element"> Order Cycle Time (RS1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-468.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-rs12.html" target="element"> Deliver Cycle Time (RS12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-58.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-605.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-sd1.html" target="element"> Environmental Sustainability Ratio (SD1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-624.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-sd11.html" target="element"> Intake Sustainability Ratio (SD11)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-634.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-sd12.html" target="element"> Recovery Ratio (SD12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-644.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-sd13.html" target="element"> Output Sustainability Ratio (SD13)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-serv-137.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-ServingRelationship" /></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+											<td><a href="../elements/oscm-elem-id-vs-o2c.html" target="element"> Order-to-Cash</a></td>
+										</tr>
+									<tr>
+											<td><a href="../elements/oscm-elem-id-comp-deliver-2.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-CompositionRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-deliver.html" target="element"> D Deliver</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/id-74751df5-ddd5-4c02-988a-c2e256b1f30a.html" target="element" title="Load Manifest">Load Manifest</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-431.html" target="element"> Deliver-To-Engineering-Order</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/id-77ff6c78-426c-4571-88a5-a113ebde0b46.html" target="element" title="Pick List">Pick List</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-491.html" target="element"> Sell on Standard Terms</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/id-b5376e98-9bcb-4390-8d5f-640a92ff57a4.html" target="element" title="Inventory Record">Inventory Record</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-521.html" target="element"> Sell Renewal</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/id-c0d2972e-2053-41d7-a708-18d97bad0f80.html" target="element" title="Customer Order">Customer Order</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-821.html" target="element"> Deliver-From-Stock</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/id-c211701d-179d-4d54-bddd-0225d7fff228.html" target="element" title="Purchase Order">Purchase Order</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-511.html" target="element"> Sell Custom Solution</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-rel-id-1222.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-122.html" target="element"> Process Inquiry</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-rel-id-1322.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-132.html" target="element"> Validate &amp; Create Order</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-rel-id-1422.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-142.html" target="element"> Route &amp; Schedule Order</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-rel-id-1522.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-152.html" target="element"> Schedule Transportation</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-rel-id-1622.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-162.html" target="element"> Invoice</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-rel-id-1722.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-172.html" target="element"> Receive &amp; Stage</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-rel-id-1822.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-182.html" target="element"> Pick</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-rel-id-1922.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-192.html" target="element"> Pack</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-rel-id-2022.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-202.html" target="element"> Load</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-rel-id-2122.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-212.html" target="element"> Ship</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-real-orphan-3.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-elem-id-proc-unconnected-submit-documents.html" target="element"> Submit Documents</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-real-orphan-4.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-elem-id-proc-unconnected-tender-load.html" target="element"> Tender Load</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-vs-trig-o2c-1.html" target="element" title="Order Confirmed">Order Confirmed</a></td>
+											<td><span class="i18n-elementtype-TriggeringRelationship" /></td>
+											<td><a href="../elements/oscm-id-531.html" target="element"> Contract Standard Terms</a></td>
+											<td><a href="../elements/oscm-id-421.html" target="element"> Deliver-to-Order</a></td>
+										</tr>
+							</tbody>
+						</table>
+					</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+OpenSCM: Open Supply Chain Model, release 2
+
+1. CONTENT: CC BY-SA 4.0
+
+The model content in this repository (its texts, its diagrams and its
+structure) is licensed under the Creative Commons Attribution-ShareAlike 4.0
+International licence (CC BY-SA 4.0):
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Attribution: "OpenSCM: Open Supply Chain Model", Bora Perzic, Acrostine,
+https://boraperzic.github.io/openscm/
+
+This is adapted material. It is based on the OpenReference Wiki (ORWiki),
+https://orwiki.org, licensed under CC BY-SA 4.0 (original terms:
+https://orwiki.org/ORWiki:Terms). Changes were made: summary texts were added to elements,
+and the model is drawn as navigable diagrams generated from it. The previous
+version is at https://boraperzic.github.io/ORWiki/
+
+Not certified by, or a product of, any supply chain standards body.
+
+2. SOFTWARE NOT INCLUDED
+
+The software that generates the diagrams, the layout and the navigation is
+not part of this repository and is not licensed under CC BY-SA 4.0.
+The HTML, CSS and JavaScript files that render the site come from Archi's
+HTML report and its bundled libraries, each under its own licence as stated
+in those files.
+
+3. TRADEMARKS
+
+Archi(R) is a registered trademark of Phillip Beauvoir.
+ArchiMate(R) is a registered trademark of The Open Group.
+
+4. NO WARRANTY
+
+The content is provided "as is", without warranty of any kind, as stated in
+section 5 of the CC BY-SA 4.0 licence.
+
+Contact: bora.perzic@acrostine.com

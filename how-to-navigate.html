@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- publisher template: how-to-navigate.html (ONE template for every site; step 12_navigate fills it in).
+     Placeholders: OpenSCM: Open Supply Chain Model model-OSCM/views/view-elements_map-%5BOSCM%5D.html Elements Map bora.perzic@acrostine.com.
+     Blocks  are kept only when the site supports X (flows, noflows, sideways,
+     elements_map, analytics, lightbox, typefilter, search); anything a site does not support is cut, the site is never
+     changed to fit this page. Source text: Office/Workstream/5models/publishing/NAV_MANUAL_DRAFT.md (15 Oct 2026). -->
+<html lang="en">
+<head>
+<!-- publisher:step:12_navigate profile:standard ts:2026-10-16T15:52:25Z -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to navigate OpenSCM: Open Supply Chain Model</title>
+<style>
+  /* The publisher's centre frame is scrolling="no": this page owns its scrolling. */
+  html, body { height: 100%; margin: 0; }
+  body { font-family: "Segoe UI", Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #222; background: #fff; }
+  .scroller { position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: auto; }
+  main { max-width: 780px; padding: 20px 28px 48px; counter-reset: sec; }
+  h1 { font-size: 22px; margin: 0 0 10px; }
+  h2 { font-size: 16px; margin: 22px 0 6px; counter-increment: sec; }
+  h2::before { content: counter(sec) ". "; }
+  .lead { background: #f3f6fa; border-left: 4px solid #3a6ea5; padding: 10px 14px; margin: 12px 0 8px; }
+  ul { padding-left: 22px; margin: 6px 0; }
+  li { margin: 3px 0; }
+  a { color: #1f5fa5; }
+  .path { font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="scroller"><main>
+<h1>How to navigate OpenSCM: Open Supply Chain Model</h1>
+
+<p class="lead"><strong>In one line:</strong> start on Home and go down one level at a time with the arrows on the shapes. Click anything to read about it. Look at the thumbnails before you open a diagram.</p>
+
+<p>The model shows detail gradually, one level at a time, so you are never shown everything at once.</p>
+
+<h2>Start on Home</h2>
+<p><a href="index.html" target="_top">Home</a> shows the main areas of the model and how they follow one another. It is the top of the map.</p>
+
+<h2>Go down and up with the arrows</h2>
+<p>Shapes on a diagram carry small arrows:</p>
+<ul>
+  <li><strong>Down arrow:</strong> opens what is inside that object, one level of detail lower.</li>
+  <li><strong>Up arrow:</strong> goes one level up, to the diagram where this object sits in its wider context.</li>
+</ul>
+
+<p>The way down is <span class="path">area → capability → process</span>.</p>
+
+<h2>Go sideways along the flow of information</h2>
+
+<p>At process level, the context diagram shows which processes this one exchanges information with.</p>
+<p>Use it as a stepping stone: follow an exchange to the <strong>next process in line</strong>. You can trace a whole chain of work this way.</p>
+
+<h2>Read about anything you click</h2>
+<ul>
+  <li><strong>Objects:</strong> click a shape, and its description opens in the <strong>panel at the bottom left</strong>.</li>
+  <li><strong>Relationships</strong> have descriptions too. Open the <strong>Relationships tab under the diagram</strong> and click a relationship's name. Its description and attributes open in the same bottom-left panel.</li>
+
+</ul>
+
+<h2>See before you click: the Lightbox</h2>
+<p><a href="index_lightbox.html" target="_top">Lightbox</a> (top menu) shows every diagram as a thumbnail. You recognise a diagram by its shape before you open it, so you are much more likely to open the right one first. Filter by diagram type to narrow the gallery.</p>
+
+<h2>Everything on one page: the Elements Map</h2>
+<p>A heatmap-style diagram, the <a href="model-OSCM/views/view-elements_map-%5BOSCM%5D.html">Elements Map</a>, shows all the relevant business objects on one page. Use it as an overview, and as another way in: click any object to go to it.</p>
+
+<h2>More</h2>
+<ul>
+  <li><a href="analytics/connectivity.html">Analytics</a> (top menu): how strongly the areas and capabilities connect to each other.</li>
+  <li><strong>Model tree and search</strong> (left panel): find any element or diagram by name.</li>
+  <li><strong>About</strong> (top menu): read it first. It explains what the model is, what it is meant for, its sources and licence, and what comes next.</li>
+</ul>
+
+<h2>Tell us what you think</h2>
+<p><strong>Feedback</strong> (top menu) opens a short Google Form, with the page you are on already filled in. Or email <a href="mailto:bora.perzic@acrostine.com">bora.perzic@acrostine.com</a>.</p>
+</main></div>
+</body>
+</html>

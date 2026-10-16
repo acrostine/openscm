@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Recondition, Repair, Remake</title>
+
+	<!-- JQUERY -->
+	<script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.4.1.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+	<!-- MARKDOWN -->
+	<script type="text/javascript" src="../../lib/marked/marked.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Recondition, Repair, Remake</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-elementtype-BusinessProcess"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-BusinessProcess" target="hint"></a>
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+                    <!-- Analysis -->
+                    	<li role="presentation"><a href="#analysis" aria-controls="analysis" role="tab" data-toggle="tab" class="i18n-analysis"></a></li>
+
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="markdown-doc"><script type="text/plain">**A scheduled order puts the work in motion.** A returned or nonconforming item is not reworked until a Work Order is scheduled and its first operation's material is issued. This process then executes every operation in the order, from first to last, following the Product Specification exactly. Each step is recorded, material is consumed, and the item moves toward final quality inspection.
+
+**The specification drives each operation.** The Product Specification supplies routing, operation details, and acceptance limits. The Capacity Plan tells the process which work centre performs each operation. At each in-process inspection point, the result is checked against the specification; if the result is outside limits, the Work Order pauses and a Nonconformance Report is created. When all operations complete and every required step is verified, the Work Order is marked Completed.
+
+**Each completed operation gets logged.** For every operation performed, the process records actual time and work centre in a **Capacity Usage Record**. That record is the evidence that each step was actually executed. A failed inspection creates a Nonconformance Report that keeps the Work Order from reaching final inspection until the issue is resolved.</script></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>level</td><td class="convertlinks no-margin" style="white-space:pre-wrap">3</td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="analysis">
+						<table class="table table-striped table-hover table-condensed" id="used-in-views">
+							<thead>
+								<tr><th colspan="2" class="i18n-used-in-views" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-viewpoint"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="used-in-views-view-process_context-[oscm-id-2602]">
+																	<td><a href="../views/view-process_context-[oscm-id-2602].html" target="view" title="Schedule Work Orders - Context"> Schedule Work Orders - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_processes-[oscm-id-grp-make]">
+																	<td><a href="../views/view-domain_processes-[oscm-id-grp-make].html" target="view" title="M Make - Processes"> M Make - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-811]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-811].html" target="view" title="Re-Make - Processes"> Re-Make - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2612]">
+																	<td><a href="../views/view-process_context-[oscm-id-2612].html" target="view" title="Issue Product - Context"> Issue Product - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-processes_overview-[OSCM]">
+																	<td><a href="../views/view-processes_overview-[OSCM].html" target="view" title="Processes Overview"> Processes Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-elements_map-[OSCM]">
+																	<td><a href="../views/view-elements_map-[OSCM].html" target="view" title="Elements Map"> Elements Map </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2642]">
+																	<td><a href="../views/view-process_context-[oscm-id-2642].html" target="view" title="Recondition, Repair, Remake - Context"> Recondition, Repair, Remake - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2592]">
+																	<td><a href="../views/view-process_context-[oscm-id-2592].html" target="view" title="Create Work Order - Context"> Create Work Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr>
+							</tbody>
+						</table>
+						<table class="table table-striped table-hover table-condensed" id="model-relations">
+							<thead>
+								<tr><th colspan="4" class="i18n-model-relations" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-type"></th>
+									<th class="i18n-source"></th>
+									<th class="i18n-target"></th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+											<td><a href="../elements/oscm-flow-4532d42afc25.html" target="element" title="Completed Work Order">Completed Work Order</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-2642.html" target="element"> Recondition, Repair, Remake</a></td>
+											<td><a href="../elements/oscm-id-2612.html" target="element"> Issue Product</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-26422.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-2642.html" target="element"> Recondition, Repair, Remake</a></td>
+											<td><a href="../elements/oscm-id-811.html" target="element"> Re-Make</a></td>
+										</tr>
+									<tr>
+											<td><a href="../elements/oscm-flow-f0b39990d8ce.html" target="element" title="Updated Work Order">Updated Work Order</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-2602.html" target="element"> Schedule Work Orders</a></td>
+											<td><a href="../elements/oscm-id-2642.html" target="element"> Recondition, Repair, Remake</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-flow-f0c31cebc255.html" target="element" title="Work Order">Work Order</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-2592.html" target="element"> Create Work Order</a></td>
+											<td><a href="../elements/oscm-id-2642.html" target="element"> Recondition, Repair, Remake</a></td>
+										</tr>
+							</tbody>
+						</table>
+					</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

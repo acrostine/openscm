@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Approve Payment - Context</title>
+
+	<!-- JQUERY -->
+	<script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.4.1.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+	<!-- MARKDOWN -->
+	<script type="text/javascript" src="../../lib/marked/marked.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Approve Payment - Context</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-viewpoint-"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-viewpoint_" target="hint"></a>
+            <!-- Or if a model (i.e has Purpose method) -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+			   <img class="diagram" src="../images/view-process_context-[oscm-id-2172].png" alt="Approve Payment - Context" usemap="#view-process_context-[oscm-id-2172]map"/>
+			   <map name="view-process_context-[oscm-id-2172]map">
+				  				<area shape="rect" coords="464,446,639,543" href="../elements/oscm-elem-id-bo-verified-invoice.html"  target="element">
+				  				<area shape="rect" coords="464,580,639,677" href="../elements/oscm-elem-id-bo-invoice.html"  target="element">
+
+				  		<area shape="rect" coords="433,414,672,710" href="../elements/oscm-elem-id-bocat-commercial-documents.html"  target="element">
+				  				<area shape="rect" coords="464,276,639,373" href="../elements/oscm-elem-id-bo-certificate-of-analysis.html"  target="element">
+
+				  		<area shape="rect" coords="433,244,672,406" href="../elements/oscm-elem-id-bocat-reference-master-data.html"  target="element">
+				  				<area shape="rect" coords="684,216,699,231" href="../views/view-domain_processes-[oscm-id-grp-source].html"  target="view">
+				  		    <!-- Other diagram objects -->
+				  						<area shape="rect" coords="652,184,667,199" href="../views/view-capability_processes-[oscm-id-731].html"  target="view">
+				  				    <!-- Other diagram objects -->
+				  								<area shape="rect" coords="619,151,634,166" href="../views/view-process_context-[oscm-id-2022].html"  target="view">
+				  						    <!-- Other diagram objects -->
+
+				  						<area shape="rect" coords="464,74,639,171" href="../elements/oscm-id-2022.html"  target="element">
+
+				  				<area shape="rect" coords="433,42,672,204" href="../elements/oscm-id-731.html"  target="element">
+
+				  		<area shape="rect" coords="401,10,704,236" href="../elements/oscm-id-grp-source.html"  target="element">
+				  				<area shape="rect" coords="293,503,308,518" href="../views/view-domain_processes-[oscm-id-grp-enable].html"  target="view">
+				  		    <!-- Other diagram objects -->
+				  						<area shape="rect" coords="261,471,276,486" href="../views/view-capability_processes-[oscm-id-501].html"  target="view">
+				  				    <!-- Other diagram objects -->
+				  						<area shape="rect" coords="73,361,248,458" href="../elements/oscm-id-2172.html"  target="element">
+
+				  				<area shape="rect" coords="42,329,281,491" href="../elements/oscm-id-501.html"  target="element">
+
+				  		<area shape="rect" coords="10,297,313,523" href="../elements/oscm-id-grp-enable.html"  target="element">
+
+			   </map>
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+                    <!-- Analysis -->
+
+						<li role="presentation"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab" class="i18n-elements"></a></li>
+						<li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab" class="i18n-relationships"></a></li>
+                    <!-- Model, Query Tab -->
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="markdown-doc"><script type="text/plain">**A payment request arrives.** The counterparty sends a Payment Request claiming that a milestone on the Sales Proposal has been completed, along with Milestone Evidence. The organisation must decide whether to release funds. This process is the control point: it matches the request against the agreed terms, checks that evidence, and routes it through the approval chain. If the evidence is unclear, the request goes back with a Request for Clarification. The point is that money leaves only when the obligation is verified and the right people have said yes.
+
+            **Three records hold the answer.** The Sales Proposal gives the payment terms, the Payment Request gives the counterparty's claim, and Milestone Evidence shows the work happened. When the approvals are complete, the process hands a Released Payment instruction to the payment system. If approval is refused, it returns a Rejection Decision to the requester. The Approval Decision records who approved and when.
+
+            **Only the right yes releases money.** The **Approval Decision** is the record that matters. It shows each approver's name and the timestamp of authorisation. Only when all required approvals are recorded does the Released Payment instruction go out. If any approver refuses, the decision is a rejection and the counterparty hears back. That decision is what stops an unauthorised disbursement.</script></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>generated_by</td><td class="convertlinks no-margin" style="white-space:pre-wrap">build_archi_xml.py::gen_proc_node_context_view</td></tr><tr><td>generator_path</td><td class="convertlinks no-margin" style="white-space:pre-wrap">pedro/capabilities/build_archi_xml_assign/build_archi_xml_assign.py</td></tr><tr><td>run_at</td><td class="convertlinks no-margin" style="white-space:pre-wrap">2026-10-10T17:56:33</td></tr><tr><td>view_type</td><td class="convertlinks no-margin" style="white-space:pre-wrap">process_context</td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="analysis">
+						<table class="table table-striped table-hover table-condensed" id="used-in-views">
+							<thead>
+								<tr><th colspan="2" class="i18n-used-in-views" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-viewpoint"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						<table class="table table-striped table-hover table-condensed" id="model-relations">
+							<thead>
+								<tr><th colspan="4" class="i18n-model-relations" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-type"></th>
+									<th class="i18n-source"></th>
+									<th class="i18n-target"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="elements">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+											    <td> <a href="../elements/oscm-id-grp-enable.html" target="element"> E Enable </a> </td>
+											    <td> <a href="../elements/oscm-id-grp-enable.html" target="element" class="i18n-elementtype-Grouping">
+											    </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/oscm-id-501.html" target="element"> Sell by Proposal </a> </td>
+													    <td> <a href="../elements/oscm-id-501.html" target="element" class="i18n-elementtype-Capability">
+													    </a> </td>
+													</tr>
+
+															<tr>
+															    <td> <a href="../elements/oscm-id-2172.html" target="element"> Approve Payment </a> </td>
+															    <td> <a href="../elements/oscm-id-2172.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+															<tr>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-501].html" target="view"> Sell by Proposal - Processes </a> </td>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-501].html" target="view" class="i18n-viewpoint-"> </a> </td>
+															</tr>
+													    <!-- Other graphical objects -->
+
+													
+													<tr>
+													    <td> <a href="../views/view-domain_processes-[oscm-id-grp-enable].html" target="view"> E Enable - Processes </a> </td>
+													    <td> <a href="../views/view-domain_processes-[oscm-id-grp-enable].html" target="view" class="i18n-viewpoint-"> </a> </td>
+													</tr>
+											    <!-- Other graphical objects -->
+
+											
+											<tr>
+											    <td> <a href="../elements/oscm-id-grp-source.html" target="element"> S Source </a> </td>
+											    <td> <a href="../elements/oscm-id-grp-source.html" target="element" class="i18n-elementtype-Grouping">
+											    </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/oscm-id-731.html" target="element"> Strategic Sourcing </a> </td>
+													    <td> <a href="../elements/oscm-id-731.html" target="element" class="i18n-elementtype-Capability">
+													    </a> </td>
+													</tr>
+
+															<tr>
+															    <td> <a href="../elements/oscm-id-2022.html" target="element"> Award Contract </a> </td>
+															    <td> <a href="../elements/oscm-id-2022.html" target="element" class="i18n-elementtype-BusinessProcess">
+															    </a> </td>
+															</tr>
+
+																	<tr>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2022].html" target="view"> Award Contract - Context </a> </td>
+																	    <td> <a href="../views/view-process_context-[oscm-id-2022].html" target="view" class="i18n-viewpoint-"> </a> </td>
+																	</tr>
+															    <!-- Other graphical objects -->
+
+															
+															<tr>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-731].html" target="view"> Strategic Sourcing - Processes </a> </td>
+															    <td> <a href="../views/view-capability_processes-[oscm-id-731].html" target="view" class="i18n-viewpoint-"> </a> </td>
+															</tr>
+													    <!-- Other graphical objects -->
+
+													
+													<tr>
+													    <td> <a href="../views/view-domain_processes-[oscm-id-grp-source].html" target="view"> S Source - Processes </a> </td>
+													    <td> <a href="../views/view-domain_processes-[oscm-id-grp-source].html" target="view" class="i18n-viewpoint-"> </a> </td>
+													</tr>
+											    <!-- Other graphical objects -->
+
+											
+											<tr>
+											    <td> <a href="../elements/oscm-elem-id-bocat-reference-master-data.html" target="element"> Reference &amp; Master Data </a> </td>
+											    <td> <a href="../elements/oscm-elem-id-bocat-reference-master-data.html" target="element" class="i18n-elementtype-Grouping">
+											    </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/oscm-elem-id-bo-certificate-of-analysis.html" target="element"> Certificate of Analysis </a> </td>
+													    <td> <a href="../elements/oscm-elem-id-bo-certificate-of-analysis.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+											
+											<tr>
+											    <td> <a href="../elements/oscm-elem-id-bocat-commercial-documents.html" target="element"> Commercial Documents </a> </td>
+											    <td> <a href="../elements/oscm-elem-id-bocat-commercial-documents.html" target="element" class="i18n-elementtype-Grouping">
+											    </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/oscm-elem-id-bo-invoice.html" target="element"> Invoice </a> </td>
+													    <td> <a href="../elements/oscm-elem-id-bo-invoice.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/oscm-elem-id-bo-verified-invoice.html" target="element"> Verified Invoice </a> </td>
+													    <td> <a href="../elements/oscm-elem-id-bo-verified-invoice.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+											
+
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="relationships">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+										<th class="i18n-source"></th>
+										<th class="i18n-target"></th>
+									</tr>
+								</thead>
+								<tbody>
+																					<tr>
+																						<td> <a href="../elements/oscm-flow-0a490543860a.html" target="element"> Approval Decision </a> </td>
+																						<td> <a href="../elements/oscm-flow-0a490543860a.html" target="element" class="i18n-elementtype-FlowRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2172.html" target="element"> Approve Payment </a> </td>
+																						<td> <a href="../elements/oscm-id-2022.html" target="element"> Award Contract </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-elem-id-acc-104.html" target="element">  </a> </td>
+																						<td> <a href="../elements/oscm-elem-id-acc-104.html" target="element" class="i18n-elementtype-AccessRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2172.html" target="element"> Approve Payment </a> </td>
+																						<td> <a href="../elements/oscm-elem-id-bo-certificate-of-analysis.html" target="element"> Certificate of Analysis </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-elem-id-acc-340.html" target="element">  </a> </td>
+																						<td> <a href="../elements/oscm-elem-id-acc-340.html" target="element" class="i18n-elementtype-AccessRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2172.html" target="element"> Approve Payment </a> </td>
+																						<td> <a href="../elements/oscm-elem-id-bo-invoice.html" target="element"> Invoice </a> </td>
+																					</tr>
+																					<tr>
+																						<td> <a href="../elements/oscm-elem-id-acc-357.html" target="element">  </a> </td>
+																						<td> <a href="../elements/oscm-elem-id-acc-357.html" target="element" class="i18n-elementtype-AccessRelationship">
+																						</a> </td>
+																						<td> <a href="../elements/oscm-id-2172.html" target="element"> Approve Payment </a> </td>
+																						<td> <a href="../elements/oscm-elem-id-bo-verified-invoice.html" target="element"> Verified Invoice </a> </td>
+																					</tr>
+
+															<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+													
+													<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+											
+																	<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+															
+															<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+													
+													<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelReference -->
+											
+											
+											
+
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

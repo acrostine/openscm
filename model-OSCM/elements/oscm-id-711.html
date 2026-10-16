@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Plan Make</title>
+
+	<!-- JQUERY -->
+	<script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.4.1.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+	<!-- MARKDOWN -->
+	<script type="text/javascript" src="../../lib/marked/marked.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Plan Make</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-elementtype-Capability"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-Capability" target="hint"></a>
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+                    <!-- Analysis -->
+                    	<li role="presentation"><a href="#analysis" aria-controls="analysis" role="tab" data-toggle="tab" class="i18n-analysis"></a></li>
+
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="markdown-doc"><script type="text/plain">**Production gets a start order.** Plan Make turns Demand Forecast, Capacity Plan, and Bill of Materials into Production Plans and Work Order Releases. It calculates production quantities, sequences the orders, and loads resources against available capacity, so production starts only when the plan is feasible.
+
+**Three inputs fix the work.** A Demand Forecast sets the quantities. A Capacity Plan tells whether the available capacity will take the load. A Bill of Materials tells which components are needed for each unit. When stock changes, an Inventory Level check triggers a safety stock comparison. The function then explodes the Bill of Materials into a Material Requirement Plan.
+
+**The sequence becomes a plan.** When production quantities and sequence are determined, the **Production Plan** is issued. That record authorises a Work Order Release to go out and start work. If the plan overloads capacity, it is escalated to the capacity owner rather than forcing an infeasible schedule.</script></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>level</td><td class="convertlinks no-margin" style="white-space:pre-wrap">2</td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="analysis">
+						<table class="table table-striped table-hover table-condensed" id="used-in-views">
+							<thead>
+								<tr><th colspan="2" class="i18n-used-in-views" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-viewpoint"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="used-in-views-view-process_context-[oscm-id-1862]">
+																	<td><a href="../views/view-process_context-[oscm-id-1862].html" target="view" title="Gather Demand for Make - Context"> Gather Demand for Make - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1752]">
+																	<td><a href="../views/view-process_context-[oscm-id-1752].html" target="view" title="Validate Demand Forecast - Context"> Validate Demand Forecast - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-elements_map-[OSCM]">
+																	<td><a href="../views/view-elements_map-[OSCM].html" target="view" title="Elements Map"> Elements Map </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_capabilities-[oscm-id-grp-plan]">
+																	<td><a href="../views/view-domain_capabilities-[oscm-id-grp-plan].html" target="view" title="P Plan - Capabilities"> P Plan - Capabilities </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-processes_overview-[OSCM]">
+																	<td><a href="../views/view-processes_overview-[OSCM].html" target="view" title="Processes Overview"> Processes Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-451]">
+																	<td><a href="../views/view-capability_context-[oscm-id-451].html" target="view" title="Plan Finance - Context"> Plan Finance - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-value_stream_context-[oscm-elem-id-vs-f2p]">
+																	<td><a href="../views/view-value_stream_context-[oscm-elem-id-vs-f2p].html" target="view" title="Forecast-to-Plan"> Forecast-to-Plan </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-711]">
+																	<td><a href="../views/view-capability_context-[oscm-id-711].html" target="view" title="Plan Make - Context"> Plan Make - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-821]">
+																	<td><a href="../views/view-capability_context-[oscm-id-821].html" target="view" title="Deliver-From-Stock - Context"> Deliver-From-Stock - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1902]">
+																	<td><a href="../views/view-process_context-[oscm-id-1902].html" target="view" title="Analyze Make Plan Deviations - Context"> Analyze Make Plan Deviations - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_processes-[oscm-id-grp-make]">
+																	<td><a href="../views/view-domain_processes-[oscm-id-grp-make].html" target="view" title="M Make - Processes"> M Make - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-2352]">
+																	<td><a href="../views/view-process_context-[oscm-id-2352].html" target="view" title="Create Schedule - Context"> Create Schedule - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-home-[OSCM]">
+																	<td><a href="../views/view-home-[OSCM].html" target="view" title="Home"> Home </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_capabilities-[oscm-id-grp-make]">
+																	<td><a href="../views/view-domain_capabilities-[oscm-id-grp-make].html" target="view" title="M Make - Capabilities"> M Make - Capabilities </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capabilities_overview-[OSCM]">
+																	<td><a href="../views/view-capabilities_overview-[OSCM].html" target="view" title="Capabilities Overview"> Capabilities Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-32]">
+																	<td><a href="../views/view-process_context-[oscm-id-32].html" target="view" title="Create Order - Context"> Create Order - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1882]">
+																	<td><a href="../views/view-process_context-[oscm-id-1882].html" target="view" title="Calculate Production Plan - Context"> Calculate Production Plan - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_processes-[oscm-id-grp-plan]">
+																	<td><a href="../views/view-domain_processes-[oscm-id-grp-plan].html" target="view" title="P Plan - Processes"> P Plan - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1892]">
+																	<td><a href="../views/view-process_context-[oscm-id-1892].html" target="view" title="Publish Production Plan - Context"> Publish Production Plan - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_capabilities-[oscm-id-grp-deliver]">
+																	<td><a href="../views/view-domain_capabilities-[oscm-id-grp-deliver].html" target="view" title="D Deliver - Capabilities"> D Deliver - Capabilities </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-711]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-711].html" target="view" title="Plan Make - Processes"> Plan Make - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-821]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-821].html" target="view" title="Deliver-From-Stock - Processes"> Deliver-From-Stock - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-781]">
+																	<td><a href="../views/view-capability_context-[oscm-id-781].html" target="view" title="Make-to-Stock - Context"> Make-to-Stock - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-781]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-781].html" target="view" title="Make-to-Stock - Processes"> Make-to-Stock - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_processes-[oscm-id-grp-deliver]">
+																	<td><a href="../views/view-domain_processes-[oscm-id-grp-deliver].html" target="view" title="D Deliver - Processes"> D Deliver - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_processes-[oscm-id-451]">
+																	<td><a href="../views/view-capability_processes-[oscm-id-451].html" target="view" title="Plan Finance - Processes"> Plan Finance - Processes </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-process_context-[oscm-id-1872]">
+																	<td><a href="../views/view-process_context-[oscm-id-1872].html" target="view" title="Gather Inventory &amp; Schedule - Context"> Gather Inventory &amp; Schedule - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr>
+							</tbody>
+						</table>
+						<table class="table table-striped table-hover table-condensed" id="model-relations">
+							<thead>
+								<tr><th colspan="4" class="i18n-model-relations" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-type"></th>
+									<th class="i18n-source"></th>
+									<th class="i18n-target"></th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+											<td><a href="../elements/oscm-elem-id-acc-1065.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-supply-chain-operations-plan.html" target="element"> Supply Chain Operations Plan</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-202.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-distribution-plan.html" target="element"> Distribution Plan</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-363.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-production-plan.html" target="element"> Production Plan</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-525.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-materials-requirements-plan.html" target="element"> Materials Requirements Plan</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-105.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-co1.html" target="element"> Supply Chain Costs (CO1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-133.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-co11.html" target="element"> Cost of Goods Sold (CO11)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-267.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp1.html" target="element"> Perfect Order Ratio (DP1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-339.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp13.html" target="element"> Orders On-time Ratio (DP13)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-372.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp14.html" target="element"> Orders In-full Ratio (DP14)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-38.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-412.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-rs1.html" target="element"> Order Cycle Time (RS1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-444.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-rs11.html" target="element"> Planning Frequency (RS11)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-492.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-rs13.html" target="element"> Make Cycle Time (RS13)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-7.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae1.html" target="element"> Cash Conversion Cycle (AE1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-serv-7.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-ServingRelationship" /></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+											<td><a href="../elements/oscm-elem-id-vs-f2p.html" target="element"> Forecast-to-Plan</a></td>
+										</tr>
+									<tr>
+											<td><a href="../elements/oscm-elem-id-comp-plan-3.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-CompositionRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-plan.html" target="element"> P Plan</a></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+										</tr><tr>
+											<td><a href="../elements/id-3f4d337c-7c0c-4c92-83a4-193e57d29da3.html" target="element" title="Customer Order">Customer Order</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-821.html" target="element"> Deliver-From-Stock</a></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+										</tr><tr>
+											<td><a href="../elements/id-6bd81e68-7865-4f0e-bb74-a45459b6f312.html" target="element" title="Demand Forecast">Demand Forecast</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-451.html" target="element"> Plan Finance</a></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+										</tr><tr>
+											<td><a href="../elements/id-8c64dc77-973c-489c-8d72-79a585c462c1.html" target="element" title="Production Schedule">Production Schedule</a></td>
+											<td><span class="i18n-elementtype-FlowRelationship" /></td>
+											<td><a href="../elements/oscm-id-781.html" target="element"> Make-to-Stock</a></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-18622.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-1862.html" target="element"> Gather Demand for Make</a></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-18722.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-1872.html" target="element"> Gather Inventory &amp; Schedule</a></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-18822.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-1882.html" target="element"> Calculate Production Plan</a></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-18922.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-1892.html" target="element"> Publish Production Plan</a></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-19022.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-RealizationRelationship" /></td>
+											<td><a href="../elements/oscm-id-1902.html" target="element"> Analyze Make Plan Deviations</a></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-vs-trig-f2p-2.html" target="element" title="Production Plan Released">Production Plan Released</a></td>
+											<td><span class="i18n-elementtype-TriggeringRelationship" /></td>
+											<td><a href="../elements/oscm-id-691.html" target="element"> Plan Supply Chain Operations</a></td>
+											<td><a href="../elements/oscm-id-711.html" target="element"> Plan Make</a></td>
+										</tr>
+							</tbody>
+						</table>
+					</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

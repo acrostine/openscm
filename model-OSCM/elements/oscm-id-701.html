@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Plan Source</title>
+
+	<!-- JQUERY -->
+	<script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.4.1.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+	<!-- MARKDOWN -->
+	<script type="text/javascript" src="../../lib/marked/marked.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Plan Source</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-elementtype-Capability"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-Capability" target="hint"></a>
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+                    <!-- Analysis -->
+                    	<li role="presentation"><a href="#analysis" aria-controls="analysis" role="tab" data-toggle="tab" class="i18n-analysis"></a></li>
+
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="markdown-doc"><script type="text/plain">**New stock and forecast signals set purchase quantities.** When a Demand Forecast completes or shifts beyond threshold, and Inventory Levels change, Plan Source calculates net requirements and determines what to order and when. It stays inside approved Supply Agreements, so order quantities and timing fit terms already signed. Purchase Plans and Replenishment Schedules keep material ordering moving.
+
+**It allocates suppliers within signed terms.** Plan Source depends on current Inventory Levels, Demand Forecast, and Supplier Performance. A supplier delivery score change triggers a review of supplier allocation. It has no authority to negotiate new suppliers or change prices; it uses only the Supply Agreements already in place. That keeps every planned order inside the terms the business has accepted.
+
+**Supplier Allocation Plan assigns planned orders.** When suppliers are allocated to planned orders, the Supplier Allocation Plan records that assignment. A missing supplier score is replaced with a default and flagged; a stale stock level triggers a refresh request. Every planned order therefore stays assigned to a supplier under an approved agreement, and ordering does not silently stop.</script></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>level</td><td class="convertlinks no-margin" style="white-space:pre-wrap">2</td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="analysis">
+						<table class="table table-striped table-hover table-condensed" id="used-in-views">
+							<thead>
+								<tr><th colspan="2" class="i18n-used-in-views" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-viewpoint"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="used-in-views-view-value_stream_context-[oscm-elem-id-vs-f2p]">
+																	<td><a href="../views/view-value_stream_context-[oscm-elem-id-vs-f2p].html" target="view" title="Forecast-to-Plan"> Forecast-to-Plan </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-processes_overview-[OSCM]">
+																	<td><a href="../views/view-processes_overview-[OSCM].html" target="view" title="Processes Overview"> Processes Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-elements_map-[OSCM]">
+																	<td><a href="../views/view-elements_map-[OSCM].html" target="view" title="Elements Map"> Elements Map </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-home-[OSCM]">
+																	<td><a href="../views/view-home-[OSCM].html" target="view" title="Home"> Home </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capability_context-[oscm-id-701]">
+																	<td><a href="../views/view-capability_context-[oscm-id-701].html" target="view" title="Plan Source - Context"> Plan Source - Context </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-domain_capabilities-[oscm-id-grp-plan]">
+																	<td><a href="../views/view-domain_capabilities-[oscm-id-grp-plan].html" target="view" title="P Plan - Capabilities"> P Plan - Capabilities </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr><tr id="used-in-views-view-capabilities_overview-[OSCM]">
+																	<td><a href="../views/view-capabilities_overview-[OSCM].html" target="view" title="Capabilities Overview"> Capabilities Overview </a></td>
+																	<td><span class="i18n-viewpoint-" /></td>
+																</tr>
+							</tbody>
+						</table>
+						<table class="table table-striped table-hover table-condensed" id="model-relations">
+							<thead>
+								<tr><th colspan="4" class="i18n-model-relations" /></tr>
+								<tr>
+									<th class="i18n-name"></th>
+									<th class="i18n-type"></th>
+									<th class="i18n-source"></th>
+									<th class="i18n-target"></th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+											<td><a href="../elements/oscm-elem-id-acc-1062.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-supply-chain-operations-plan.html" target="element"> Supply Chain Operations Plan</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-199.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-distribution-plan.html" target="element"> Distribution Plan</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-257.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-forecast.html" target="element"> Forecast</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-368.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-production-plan.html" target="element"> Production Plan</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-524.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-materials-requirements-plan.html" target="element"> Materials Requirements Plan</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-acc-975.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-AccessRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-bo-sourcing-plan.html" target="element"> Sourcing Plan</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-104.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-co1.html" target="element"> Supply Chain Costs (CO1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-131.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-co11.html" target="element"> Cost of Goods Sold (CO11)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-266.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp1.html" target="element"> Perfect Order Ratio (DP1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-338.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp13.html" target="element"> Orders On-time Ratio (DP13)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-37.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae12.html" target="element"> Days of Inventory (AE12)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-371.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-dp14.html" target="element"> Orders In-full Ratio (DP14)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-411.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-rs1.html" target="element"> Order Cycle Time (RS1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-438.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-rs11.html" target="element"> Planning Frequency (RS11)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-526.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-rs14.html" target="element"> Sourcing Cycle Time (RS14)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-infl-6.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-InfluenceRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-metric-ae1.html" target="element"> Cash Conversion Cycle (AE1)</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-elem-id-serv-6.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-ServingRelationship" /></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+											<td><a href="../elements/oscm-elem-id-vs-f2p.html" target="element"> Forecast-to-Plan</a></td>
+										</tr>
+									<tr>
+											<td><a href="../elements/oscm-elem-id-comp-plan-2.html" target="element" title=""></a></td>
+											<td><span class="i18n-elementtype-CompositionRelationship" /></td>
+											<td><a href="../elements/oscm-id-grp-plan.html" target="element"> P Plan</a></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+										</tr><tr>
+											<td><a href="../elements/oscm-vs-trig-f2p-1.html" target="element" title="Sourcing Plan Released">Sourcing Plan Released</a></td>
+											<td><span class="i18n-elementtype-TriggeringRelationship" /></td>
+											<td><a href="../elements/oscm-id-691.html" target="element"> Plan Supply Chain Operations</a></td>
+											<td><a href="../elements/oscm-id-701.html" target="element"> Plan Source</a></td>
+										</tr>
+							</tbody>
+						</table>
+					</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>
