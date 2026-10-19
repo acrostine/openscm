@@ -3,10 +3,11 @@
      Placeholders: OpenSCM: Open Supply Chain Model model-OSCM/views/view-elements_map-%5BOSCM%5D.html Elements Map bora.perzic@acrostine.com.
      Blocks  are kept only when the site supports X (flows, noflows, sideways,
      elements_map, analytics, lightbox, typefilter, search); anything a site does not support is cut, the site is never
-     changed to fit this page. Source text: Office/Workstream/5models/publishing/NAV_MANUAL_DRAFT.md (15 Oct 2026). -->
+     changed to fit this page. Source text: Office/Workstream/5models/publishing/NAV_MANUAL_DRAFT.md (15 Oct 2026); Home part rewritten 19 Oct 2026
+     for the text Home (names only: coloured names = areas, a click opens a view). -->
 <html lang="en">
 <head>
-<!-- publisher:step:12_navigate profile:standard ts:2026-10-16T15:52:25Z -->
+<!-- publisher:step:12_navigate profile:standard ts:2026-10-19T20:34:47Z -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to navigate OpenSCM: Open Supply Chain Model</title>
@@ -30,17 +31,23 @@
 <div class="scroller"><main>
 <h1>How to navigate OpenSCM: Open Supply Chain Model</h1>
 
-<p class="lead"><strong>In one line:</strong> start on Home and go down one level at a time with the arrows on the shapes. Click anything to read about it. Look at the thumbnails before you open a diagram.</p>
+<p class="lead"><strong>In one line:</strong> start on Home and click a name to open its diagram, then go down one level at a time with the arrows on the shapes. Click a shape to read about it. Look at the thumbnails before you open a diagram.</p>
 
 <p>The model shows detail gradually, one level at a time, so you are never shown everything at once.</p>
 
 <h2>Start on Home</h2>
-<p><a href="index.html" target="_top">Home</a> shows the main areas of the model and how they follow one another. It is the top of the map.</p>
+<p><a href="index.html" target="_top">Home</a> is the top of the map: one page of names. There are no boxes, icons or small arrows on it. The name itself is the link.</p>
+<ul>
+  <li><strong>Coloured names</strong> are the main areas (domains) of the model, one colour each. Click one to open the diagram of the capabilities inside that area.</li>
+  <li><strong>Plain names</strong> under an area are its capabilities. Click one to open its context diagram: the capability and the capabilities it exchanges information with.</li>
+  <li><strong>Lines with arrowheads</strong> between areas, where Home has them, show which area hands work to which. They are for reading only.</li>
+  <li>A click on Home opens a <strong>diagram</strong>, not a description. Descriptions open from the diagrams (see below). A name in light grey, if you see one, is not modelled yet and cannot be opened.</li>
+</ul>
 
 <h2>Go down and up with the arrows</h2>
-<p>Shapes on a diagram carry small arrows:</p>
+<p>Below Home, shapes on a diagram carry small arrows:</p>
 <ul>
-  <li><strong>Down arrow:</strong> opens what is inside that object, one level of detail lower.</li>
+  <li><strong>Down arrow:</strong> opens what is inside that object, one level of detail lower. On an area it opens its capabilities; on a capability, its context diagram; on the capability at the centre of a context diagram, its processes (where the model has them).</li>
   <li><strong>Up arrow:</strong> goes one level up, to the diagram where this object sits in its wider context.</li>
 </ul>
 
@@ -53,7 +60,7 @@
 
 <h2>Read about anything you click</h2>
 <ul>
-  <li><strong>Objects:</strong> click a shape, and its description opens in the <strong>panel at the bottom left</strong>.</li>
+  <li><strong>Objects:</strong> on any diagram below Home, click a shape, and its description opens in the <strong>panel at the bottom left</strong>.</li>
   <li><strong>Relationships</strong> have descriptions too. Open the <strong>Relationships tab under the diagram</strong> and click a relationship's name. Its description and attributes open in the same bottom-left panel.</li>
 
 </ul>
