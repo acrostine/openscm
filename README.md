@@ -1,6 +1,6 @@
 # OpenSCM: Open Supply Chain Model
 
-**Site:** https://boraperzic.github.io/openscm/
+**Site:** https://acrostine.github.io/openscm/
 
 Release 2 of a model of operations and supply chain based on the ORWiki open reference, built with Archi®, the open-source ArchiMate® tool. A share-alike community model: contributions and feedback welcome.
 
